@@ -4,6 +4,20 @@ on:
   workflow_dispatch:  # Enables manual trigger
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    environment: github-pages
+    
+    steps:
+    # Step 1: Check out the code
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
+    
+
+    - name: ✅ Ready for Deployment
+      run: echo "Deployment is ready for deployment!"
+
   deploy:
     runs-on: ubuntu-latest
     
