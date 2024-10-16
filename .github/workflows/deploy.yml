@@ -1,4 +1,4 @@
-name: Deploy HTML Website to cPanel
+name: Deploy
 
 on:
   workflow_run:
