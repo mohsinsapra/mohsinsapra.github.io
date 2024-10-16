@@ -8,12 +8,11 @@ jobs:
 
     steps:
     # Step 1: Check out the code
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    # Step 2: Deploy to cPanel using FTP
-    - name: Deploy to cPanel via FTP
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USERNAME }}
