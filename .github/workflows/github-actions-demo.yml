@@ -1,6 +1,7 @@
 name: Deploy HTML Website to cPanel
 
-on: [push]
+on:
+  workflow_dispatch:  # Enables manual trigger
 
 jobs:
   deploy:
@@ -13,7 +14,7 @@ jobs:
     - name: 🚚 Get latest code
       uses: actions/checkout@v4
     
-    - name: 📂 Sync files
+    - name: 📂 Uploading to ftp files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ${{ secrets.FTP_HOST }}
@@ -22,3 +23,6 @@ jobs:
         port: ${{ secrets.FTP_PORT }}
         local-dir: ./  # Directory containing your HTML files
         server-dir: /  # Change to the target cPanel directory
+
+    - name: ✅ Confirm Deployment
+      run: echo "Deployment completed successfully!"
