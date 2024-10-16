@@ -1,6 +1,6 @@
 name: Deploy HTML Website to cPanel
 
-on:[push] # Enables manual trigger
+on: [push] # Enables manual trigger
 
 jobs:
   build:
