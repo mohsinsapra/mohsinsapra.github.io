@@ -20,4 +20,4 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         port: ${{ secrets.FTP_PORT }}
         local-dir: ./  # Directory containing your HTML files
-        server-dir: /public_html  # Change to the target cPanel directory
+        server-dir: /  # Change to the target cPanel directory
