@@ -1,0 +1,31 @@
+name: Deploy Python App to cPanel
+
+on:
+  push:
+    branches:
+      - main  # Automatically triggers on push to main branch
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: github-pages
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.CPANEL_SSH_KEY }}
+
+      - name: Upload Python App to cPanel
+        run: |
+          rsync -avz -e "ssh -p ${{ secrets.CPANEL_PORT }}" --exclude='.git' ./ ${{ secrets.CPANEL_USERNAME }}@${{ secrets.CPANEL_HOST }}:${{ secrets.CPANEL_APP_DIRECTORY }}
+
+      - name: Install Python dependencies on cPanel
+        run: |
+          ssh -p ${{ secrets.CPANEL_PORT }} ${{ secrets.CPANEL_USERNAME }}@${{ secrets.CPANEL_HOST }} << 'EOF'
+          cd ${{ secrets.CPANEL_APP_DIRECTORY }}
+          mkdir testing
+          EOF
