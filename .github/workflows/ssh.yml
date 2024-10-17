@@ -19,6 +19,11 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.CPANEL_SSH_KEY }}
 
+      - name: Add SSH Host Key
+        run: |
+            mkdir -p ~/.ssh
+            ssh-keyscan -p ${{ secrets.CPANEL_PORT }} ${{ secrets.CPANEL_HOST }} >> ~/.ssh/known_hosts
+  
       - name: Upload Python App to cPanel
         run: |
           rsync -avz -e "ssh -p ${{ secrets.CPANEL_PORT }}" --exclude='.git' ./ ${{ secrets.CPANEL_USERNAME }}@${{ secrets.CPANEL_HOST }}:${{ secrets.CPANEL_APP_DIRECTORY }}
