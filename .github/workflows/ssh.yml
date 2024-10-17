@@ -3,7 +3,7 @@ name: Deploy Python App to cPanel
 on:
   push:
     branches:
-      - main  # Automatically triggers on push to main branch
+      - master  # Automatically triggers on push to main branch
   workflow_dispatch:
 
 jobs:
