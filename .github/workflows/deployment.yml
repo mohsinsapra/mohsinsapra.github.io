@@ -1,0 +1,47 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master  # Automatically triggers on pushes to main
+  workflow_dispatch:  # Allows manual trigger as well
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: github-pages
+    
+    steps:
+    - name: ✅ Ready for Deployment
+      run: echo "Deployment is ready for deployment!"
+
+  plan:
+    runs-on: ubuntu-latest
+    needs: build
+    environment: github-pages
+    
+    steps:
+    # Step 1: Check out the code
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
+
+    - name: 📂 Uploading to ftp files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.FTP_HOST }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        port: ${{ secrets.FTP_PORT }}
+        local-dir: ./  # Directory containing your HTML files
+        server-dir: /  # Change to the target cPanel directory
+
+  apply:
+    runs-on: ubuntu-latest
+    needs: plan
+    environment: github-pages
+    
+    steps:
+    - name: ✅ Confirm Deployment
+      run: echo "Deployment completed successfully!"
+
+      
