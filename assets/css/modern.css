@@ -481,6 +481,14 @@ main, .footer { position: relative; z-index: 2; }
   font-weight: 700;
 }
 .job-card__points li strong { color: var(--text); font-weight: 600; }
+.job-card__result {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+}
 
 .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .edu-card {

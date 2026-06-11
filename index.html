@@ -184,16 +184,25 @@
                             <p class="job-card__date">Dec 2022 — Present</p>
                         </div>
                         <ul class="job-card__points">
-                            <li>Scaled the <strong>Cloud OCR automation</strong> platform to ~680,000 alarms/year across 3,972 devices with 99.9% auto-resolution — cut processing time from 10 minutes to 47 seconds (13× faster) using parallel Celery workers and ECS scheduled scaling, saving ~$18,000/year in infrastructure and manual review costs.</li>
-                            <li>Slashed core <strong>API response times from 10–15s to 1–3s</strong> through read-replica database routing, alarm query rewrites, and audit-event archiving and indexing on the NestJS/DocumentDB backend.</li>
-                            <li>Shipped enterprise-grade <strong>Microsoft Azure Entra SSO</strong> end-to-end — MSAL backend, group-to-role mapping and management UI — unlocking hospital-scale enterprise customers.</li>
-                            <li>Built <strong>two products from scratch to production</strong>: WebLoad (auth, load/unload/merge flows, QR scanning, push notifications) and the Dosell Pro hybrid tablet app in Flutter (patient UI, video calls, supervised dispense, multi-language).</li>
-                            <li>Engineered a full <strong>production data lake</strong> — AWS DMS to S3 Parquet, Glue ETL decryption and an Athena query layer — plus daily Lambda FTP/SFTP crawlers archiving 365+ GiB of device files, all managed as Terraform/Terragrunt IaC.</li>
-                            <li>Led development of <strong>Dosell's first hybrid application</strong> (iOS/Android/Web) to address procurement and customer management gaps. Delivered Flutter-based solution with secure API integrations within 2-month deadline. Enabled Finnish deal of 500-1000 units and secured 1M SEK ARR milestone.</li>
-                            <li>Architected scalable <strong>React.js and Next.js medical applications</strong> to resolve performance bottlenecks. Implemented optimization strategies, code splitting, and responsive design patterns. Improved load times by 40% and achieved 99.9% uptime for critical workflows.</li>
-                            <li>Designed <strong>microservices architecture</strong> using NestJS, PostgreSQL, and event-driven patterns to streamline backend operations. Replaced legacy systems causing data processing bottlenecks. Increased throughput by 3x and reduced latency from 2000ms to 300ms.</li>
-                            <li><strong>Mentored 5 junior developers</strong> through code reviews, architecture guidance, and technical workshops on React, Node.js, and cloud deployment. Established sustainable knowledge sharing culture and development best practices. All mentees promoted within 12 months, improved code quality by 50%.</li>
-                        </ul>
+                        <li>Manual photo review of dispenser alarms at ICE Malaga cost ~$1,000/month and took 10+ minutes per alarm as the device fleet scaled. Built a <strong>Django + Celery parallel OCR pipeline</strong> on AWS ECS with scheduled scaling, deployed entirely as Terraform/Terragrunt IaC.
+                            <span class="job-card__result">→ ~680,000 alarms/year across 3,972 devices auto-resolved at 99.9% — 47 s per alarm (13× faster), ~$18,000/year saved</span></li>
+                        <li>Care staff faced 10–15 second API responses on critical portal workflows. Introduced <strong>read-replica database routing</strong>, rewrote alarm queries, archived and indexed audit events, and removed hidden outbound API calls in the NestJS/DocumentDB backend.
+                            <span class="job-card__result">→ response times cut to 1–3 s (5–10× faster)</span></li>
+                        <li>Hospital-scale customers required enterprise authentication before adopting Dosell. Shipped <strong>Microsoft Azure Entra SSO</strong> end-to-end — MSAL backend, group-to-role mapping and a management UI.
+                            <span class="job-card__result">→ unlocked hospital-scale enterprise customers</span></li>
+                        <li>Loading and patient-facing workflows had no dedicated tooling. Designed and built <strong>two products from scratch</strong>: WebLoad (auth, load/unload/merge flows, QR scanning, push notifications) and the Dosell Pro hybrid tablet app in Flutter (patient UI, video calls, supervised dispense, multi-language).
+                            <span class="job-card__result">→ both shipped from zero to production</span></li>
+                        <li>Production data sat locked in DocumentDB with no analytics access. Engineered a <strong>production data lake</strong> — AWS DMS to S3 Parquet, a Glue ETL decryption job and an Athena query layer — plus daily Lambda FTP/SFTP crawlers.
+                            <span class="job-card__result">→ 48.9 GiB queryable via SQL; 365+ GiB of device files archived automatically every day</span></li>
+                        <li>Dosell had procurement and customer-management gaps and no mobile offering. Led development of the company's <strong>first hybrid application</strong> (iOS/Android/Web), delivering a Flutter solution with secure API integrations within a 2-month deadline.
+                            <span class="job-card__result">→ enabled a Finnish deal of 500–1000 units and secured the 1M SEK ARR milestone</span></li>
+                        <li>Medical web applications suffered performance bottlenecks on critical workflows. Architected scalable <strong>React.js and Next.js applications</strong> with code splitting, optimization strategies and responsive design patterns.
+                            <span class="job-card__result">→ 40% faster load times and 99.9% uptime on critical workflows</span></li>
+                        <li>Legacy systems caused data-processing bottlenecks across backend operations. Designed a <strong>microservices architecture</strong> using NestJS, PostgreSQL and event-driven patterns.
+                            <span class="job-card__result">→ 3× throughput; latency reduced from 2000 ms to 300 ms</span></li>
+                        <li>Five junior developers needed structured growth and the team lacked shared engineering practices. <strong>Mentored</strong> them through code reviews, architecture guidance and workshops on React, Node.js and cloud deployment.
+                            <span class="job-card__result">→ all mentees promoted within 12 months; code quality improved 50%</span></li>
+                    </ul>
                     </article>
 
                     <article class="job-card">
@@ -205,10 +214,13 @@
                             <p class="job-card__date">Apr 2020 — Nov 2022</p>
                         </div>
                         <ul class="job-card__points">
-                            <li>Architected and developed complete <strong>Bitcoin ATM solution</strong> for cryptocurrency adoption across Spain, working fully remotely. Built end-to-end system including hardware integration, backend microservices with AWS SQS, frontend website, and Bitcoin mainnet/Lightning Network integration. Successfully deployed 22 ATMs across Spanish locations, processing secure cash and debit card transactions for bitcoin purchases.</li>
-                            <li>Built <strong>Venrecarga mobile recharge service</strong> addressing critical communication needs for Venezuelan market during economic crisis. Integrated multi-payment gateway solution with BunQ Bank, Stripe, PayPal, and OpenNode for cryptocurrency payments, providing continuous support and feature development. Generated significant revenue impact for company through high-volume mobile top-up transactions serving Venezuelan diaspora worldwide.</li>
-                            <li>Developed <strong>Rembit cryptocurrency remittance service</strong> enabling users to send funds instantly to loved ones over Master and Visa networks. Implemented secure KYC compliance endpoints, anti-money laundering checks, and ETL pipeline transforming S3 data to MySQL using Athena with 24-hour automated processing. Achieved €10,000+ in Bitcoin transfers within first month of launch, demonstrating strong market adoption and technical reliability.</li>
-                        </ul>
+                        <li>Spain had almost no accessible way to buy Bitcoin with cash. Architected a complete <strong>Bitcoin ATM solution</strong> fully remotely — hardware integration, AWS SQS microservices backend, frontend website, and Bitcoin mainnet/Lightning Network integration.
+                            <span class="job-card__result">→ 22 ATMs deployed across Spain, processing secure cash and debit-card bitcoin purchases</span></li>
+                        <li>Venezuela's economic crisis left families struggling to stay connected, and the diaspora needed a reliable way to send mobile top-ups home. Built the <strong>Venrecarga recharge service</strong> with multi-payment-gateway integration — BunQ Bank, Stripe, PayPal and OpenNode for cryptocurrency payments — with continuous support and feature development.
+                            <span class="job-card__result">→ high-volume top-up transactions serving the Venezuelan diaspora worldwide, with significant revenue impact</span></li>
+                        <li>Cross-border remittances were slow and expensive for users sending money to loved ones. Developed the <strong>Rembit crypto remittance service</strong> over Mastercard and Visa networks with secure KYC compliance endpoints, anti-money-laundering checks, and an S3-to-MySQL ETL pipeline using Athena with 24-hour automated processing.
+                            <span class="job-card__result">→ €10,000+ in Bitcoin transfers within the first month of launch</span></li>
+                    </ul>
                     </article>
                 </div>
 
