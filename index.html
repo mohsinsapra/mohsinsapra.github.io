@@ -123,8 +123,8 @@
         <!-- ===== TECH MARQUEE ===== -->
         <div class="marquee" aria-hidden="true">
             <div class="marquee__track">
-                <span>React.js</span><span>Next.js</span><span>Django</span><span>NestJS</span><span>Flutter</span><span>TypeScript</span><span>Python</span><span>AWS</span><span>Docker</span><span>PostgreSQL</span><span>Three.js</span><span>GSAP</span><span>Raspberry Pi</span><span>MQTT</span>
-                <span>React.js</span><span>Next.js</span><span>Django</span><span>NestJS</span><span>Flutter</span><span>TypeScript</span><span>Python</span><span>AWS</span><span>Docker</span><span>PostgreSQL</span><span>Three.js</span><span>GSAP</span><span>Raspberry Pi</span><span>MQTT</span>
+                <span>React.js</span><span>Next.js</span><span>Django</span><span>NestJS</span><span>Flutter</span><span>TypeScript</span><span>Python</span><span>AWS</span><span>Docker</span><span>PostgreSQL</span><span>Three.js</span><span>GSAP</span><span>Terraform</span><span>Athena</span><span>Angular</span><span>AWS Lambda</span><span>Raspberry Pi</span><span>MQTT</span>
+                <span>React.js</span><span>Next.js</span><span>Django</span><span>NestJS</span><span>Flutter</span><span>TypeScript</span><span>Python</span><span>AWS</span><span>Docker</span><span>PostgreSQL</span><span>Three.js</span><span>GSAP</span><span>Terraform</span><span>Athena</span><span>Angular</span><span>AWS Lambda</span><span>Raspberry Pi</span><span>MQTT</span>
             </div>
         </div>
 
@@ -143,16 +143,16 @@
                         <span class="stat__label">years of experience</span>
                     </div>
                     <div class="stat gs-reveal">
-                        <span class="stat__num" data-count="22" data-suffix="">0</span>
-                        <span class="stat__label">bitcoin ATMs deployed in Spain</span>
+                        <span class="stat__num" data-count="680" data-suffix="K+">0</span>
+                        <span class="stat__label">OCR alarms auto-resolved per year</span>
                     </div>
                     <div class="stat gs-reveal">
-                        <span class="stat__num" data-count="99.9" data-suffix="%">0</span>
-                        <span class="stat__label">uptime on critical medical workflows</span>
+                        <span class="stat__num" data-count="13" data-suffix="×">0</span>
+                        <span class="stat__label">faster OCR — 10 min down to 47 s</span>
                     </div>
                     <div class="stat gs-reveal">
-                        <span class="stat__num" data-count="80" data-suffix="%">0</span>
-                        <span class="stat__label">manual work cut with cloud OCR</span>
+                        <span class="stat__num" data-count="18" data-suffix="K">0</span>
+                        <span class="stat__label">USD saved per year through cloud automation</span>
                     </div>
                 </div>
 
@@ -184,7 +184,11 @@
                             <p class="job-card__date">Dec 2022 — Present</p>
                         </div>
                         <ul class="job-card__points">
-                            <li>Spearheaded <strong>Cloud OCR automation</strong> to eliminate manual alarm processing bottlenecks at ICE Malaga. Built Django backend with Celery parallel processing and AWS infrastructure (ECS, ECR, ALB, VPC) including auto-calling mechanism. Reduced manual intervention by 80%, cut recurring costs, and improved response times by 60%.</li>
+                            <li>Scaled the <strong>Cloud OCR automation</strong> platform to ~680,000 alarms/year across 3,972 devices with 99.9% auto-resolution — cut processing time from 10 minutes to 47 seconds (13× faster) using parallel Celery workers and ECS scheduled scaling, saving ~$18,000/year in infrastructure and manual review costs.</li>
+                            <li>Slashed core <strong>API response times from 10–15s to 1–3s</strong> through read-replica database routing, alarm query rewrites, and audit-event archiving and indexing on the NestJS/DocumentDB backend.</li>
+                            <li>Shipped enterprise-grade <strong>Microsoft Azure Entra SSO</strong> end-to-end — MSAL backend, group-to-role mapping and management UI — unlocking hospital-scale enterprise customers.</li>
+                            <li>Built <strong>two products from scratch to production</strong>: WebLoad (auth, load/unload/merge flows, QR scanning, push notifications) and the Dosell Pro hybrid tablet app in Flutter (patient UI, video calls, supervised dispense, multi-language).</li>
+                            <li>Engineered a full <strong>production data lake</strong> — AWS DMS to S3 Parquet, Glue ETL decryption and an Athena query layer — plus daily Lambda FTP/SFTP crawlers archiving 365+ GiB of device files, all managed as Terraform/Terragrunt IaC.</li>
                             <li>Led development of <strong>Dosell's first hybrid application</strong> (iOS/Android/Web) to address procurement and customer management gaps. Delivered Flutter-based solution with secure API integrations within 2-month deadline. Enabled Finnish deal of 500-1000 units and secured 1M SEK ARR milestone.</li>
                             <li>Architected scalable <strong>React.js and Next.js medical applications</strong> to resolve performance bottlenecks. Implemented optimization strategies, code splitting, and responsive design patterns. Improved load times by 40% and achieved 99.9% uptime for critical workflows.</li>
                             <li>Designed <strong>microservices architecture</strong> using NestJS, PostgreSQL, and event-driven patterns to streamline backend operations. Replaced legacy systems causing data processing bottlenecks. Increased throughput by 3x and reduced latency from 2000ms to 300ms.</li>
@@ -250,6 +254,7 @@
                         <h4 class="stack__domain">Frontend</h4>
                         <ul class="stack__chips">
                             <li class="is-core">React.js</li>
+                            <li>Angular</li>
                             <li>Tailwind CSS</li>
                             <li class="is-core">Responsive UI Design</li>
                             <li>Three.js</li>
@@ -261,6 +266,7 @@
                         <h4 class="stack__domain">Backend</h4>
                         <ul class="stack__chips">
                             <li class="is-core">Django</li>
+                            <li class="is-core">NestJS</li>
                             <li class="is-core">REST APIs (JWT Auth, Swagger)</li>
                             <li>Node.js</li>
                             <li>Express.js</li>
@@ -275,6 +281,8 @@
                             <li>Beamer</li>
                             <li>BLE</li>
                             <li>SharedPreferences</li>
+                            <li>Swift (native iOS)</li>
+                            <li>Kotlin (native Android)</li>
                         </ul>
                     </div>
                     <div class="stack__row">
@@ -288,18 +296,32 @@
                     </div>
                     <div class="stack__row">
                         <span class="stack__num">06</span>
+                        <h4 class="stack__domain">Data Engineering</h4>
+                        <ul class="stack__chips">
+                            <li class="is-core">Amazon Athena</li>
+                            <li>AWS DMS</li>
+                            <li>Glue ETL &amp; Crawlers</li>
+                            <li>S3 Parquet data lakes</li>
+                            <li>Lambda data crawlers</li>
+                            <li>EventBridge Scheduler</li>
+                        </ul>
+                    </div>
+                    <div class="stack__row">
+                        <span class="stack__num">07</span>
                         <h4 class="stack__domain">DevOps &amp; Cloud</h4>
                         <ul class="stack__chips">
+                            <li class="is-core">Terraform &amp; Terragrunt</li>
                             <li class="is-core">Docker &amp; Docker Compose</li>
                             <li>GitHub Actions</li>
                             <li>GitLab CI</li>
-                            <li>AWS (EC2, ECS, VPC, ALB)</li>
+                            <li>AWS (ECS, Lambda, VPC, ALB, EventBridge)</li>
+                            <li>CloudWatch &amp; Splunk</li>
                             <li>Nginx</li>
                             <li>cPanel deployments</li>
                         </ul>
                     </div>
                     <div class="stack__row">
-                        <span class="stack__num">07</span>
+                        <span class="stack__num">08</span>
                         <h4 class="stack__domain">IoT &amp; Automation</h4>
                         <ul class="stack__chips">
                             <li class="is-core">Raspberry Pi</li>
