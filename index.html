@@ -11,9 +11,7 @@
     <!-- theme bootstrap: set before CSS paints to avoid flash -->
     <script>
         (function () {
-            var t = localStorage.getItem("theme");
-            if (!t) t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
-            document.documentElement.dataset.theme = t;
+            document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
         })();
     </script>
 
