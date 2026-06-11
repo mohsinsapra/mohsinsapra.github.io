@@ -619,6 +619,25 @@ main, .footer { position: relative; z-index: 2; }
 }
 .pcard:hover .pcard__media img { transform: scale(1.06); }
 .pcard__media--embed { overflow-y: auto; padding: 8px 12px; }
+/* featured app card: triple phone-screenshot strip */
+.pcard--featured { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), var(--shadow); }
+.pcard--featured .pcard__tag::before { content: "★ "; }
+.pcard__media--shots {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  height: 260px;
+}
+.pcard__media--shots img {
+  width: calc(100% / 3 - 6px);
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 10px;
+}
+/* first shot's headline is at its bottom */
+.pcard__media--shots img:first-child { object-position: bottom center; }
+.pcard:hover .pcard__media--shots img { transform: none; }
 .pcard__body {
   padding: 24px;
   display: flex;
