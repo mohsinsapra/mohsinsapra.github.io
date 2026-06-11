@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Muhammad Mohsin — Senior Full-Stack Engineer in Stockholm, Sweden. React, Django, Flutter, AWS. Portfolio, resume and projects.">
+    <meta name="author" content="Muhammad Mohsin">
+    <title>Muhammad Mohsin — Full Stack Developer</title>
+
+    <!-- theme bootstrap: set before CSS paints to avoid flash -->
+    <script>
+        (function () {
+            var t = localStorage.getItem("theme");
+            if (!t) t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+            document.documentElement.dataset.theme = t;
+        })();
+    </script>
 
     <script type="text/javascript">
         (function (c, l, a, r, i, t, y) {
@@ -15,946 +24,580 @@
             y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
         })(window, document, "clarity", "script", "u3urtsqtss");
     </script>
-    
+
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R6MYY4QT66"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6MYY4QT66"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-R6MYY4QT66');
+    </script>
 
-  gtag('config', 'G-R6MYY4QT66');
-</script>
-
-    <title>Muhammad Mohsin</title>
-    <link rel="stylesheet" href="assets/css/monochrome.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Inconsolata" rel="stylesheet">
-    <link href="https://cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/modern.css">
 </head>
 
 <body>
 
-    <!--Switcher-->
-    <div class="style-switcher" style="display: none;">
-        <span class="style-switcher__control"></span>
-        <div class="style-switcher__list">
-            <a class="style-switcher__link style-switcher__link--color"></a>
-            <a class="style-switcher__link style-switcher__link--mono"></a>
-        </div>
-    </div>
-    <!--Switcher-->
+    <!-- fixed three.js background, persists across the whole page -->
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
-    <!--Main menu-->
-    <div class="menu">
-        <div class="container">
-            <div class="row">
-                <div class="menu__wrapper d-none d-lg-block col-md-12">
-                    <nav class="">
-                        <ul>
-                            <li><a href="#hello">Hello</a></li>
-                            <li><a href="#resume">Resume</a></li>
-                            <li><a href="#portfolio">Portfolio</a></li>
-                            <li><a href="#testimonials">testimonials</a></li>
-                            <li><a href="#contact">Contact</a></li>
+    <!-- scroll progress -->
+    <div class="progress-bar" aria-hidden="true"></div>
+
+    <!-- ===== NAV ===== -->
+    <nav class="nav">
+        <div class="wrap nav__inner">
+            <a class="nav__logo" href="#top" data-scroll>mohsin<span>.se_</span></a>
+            <div class="nav__links">
+                <a href="#hello" data-scroll>hello</a>
+                <a href="#resume" data-scroll>resume</a>
+                <a href="#portfolio" data-scroll>work</a>
+                <a href="#testimonials" data-scroll>words</a>
+                <a href="#contact" data-scroll>contact</a>
+            </div>
+            <div class="nav__actions">
+                <button class="theme-toggle" aria-label="Toggle dark / light theme">
+                    <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                </button>
+                <button class="nav__burger" aria-label="Open menu">≡</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== MOBILE MENU ===== -->
+    <div class="mobile-menu">
+        <button class="mobile-menu__close" aria-label="Close menu">✕</button>
+        <a href="#hello" data-scroll><span>01</span>hello</a>
+        <a href="#resume" data-scroll><span>02</span>resume</a>
+        <a href="#portfolio" data-scroll><span>03</span>work</a>
+        <a href="#testimonials" data-scroll><span>04</span>words</a>
+        <a href="#contact" data-scroll><span>05</span>contact</a>
+    </div>
+
+    <main id="top">
+
+        <!-- ===== HERO ===== -->
+        <header class="hero">
+            <div class="wrap hero__inner">
+                <p class="hero__kicker">// stockholm, sweden — full stack developer</p>
+                <h1 class="hero__name">
+                    <span class="hero__line"><span class="word">MUHAMMAD</span></span>
+                    <span class="hero__line"><span class="word">MOHSIN</span><span class="cursor-blink">_</span></span>
+                </h1>
+                <div class="hero__sub">
+                    <p class="hero__role">&gt; I build scalable products end-to-end —<br>react / django / flutter / aws</p>
+                    <div class="hero__social">
+                        <a href="https://www.github.com/mohsinsapra/" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mohsinsapra/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 .001-4.124 2.062 2.062 0 0 1-.001 4.124zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/mohsinsapraa/" target="_blank" rel="noopener" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://www.twitter.com/mohsinsapra/" target="_blank" rel="noopener" aria-label="Twitter / X">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932zM17.61 20.644h2.039L6.486 3.24H4.298z"/></svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@mohsinsapraa" target="_blank" rel="noopener" aria-label="TikTok">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero__contacts">
+                    <a href="tel:46764361487">+46 76 436 14 87</a>
+                    <a href="mailto:mohsin.sapra@gmail.com">mohsin.sapra@gmail.com</a>
+                    <a href="assets/mohsinsapra.pdf" download>download cv ↓</a>
+                </div>
+            </div>
+            <span class="hero__scroll">SCROLL</span>
+        </header>
+
+        <!-- ===== TECH MARQUEE ===== -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee__track">
+                <span>React.js</span><span>Next.js</span><span>Django</span><span>NestJS</span><span>Flutter</span><span>TypeScript</span><span>Python</span><span>AWS</span><span>Docker</span><span>PostgreSQL</span><span>Three.js</span><span>GSAP</span><span>Raspberry Pi</span><span>MQTT</span>
+                <span>React.js</span><span>Next.js</span><span>Django</span><span>NestJS</span><span>Flutter</span><span>TypeScript</span><span>Python</span><span>AWS</span><span>Docker</span><span>PostgreSQL</span><span>Three.js</span><span>GSAP</span><span>Raspberry Pi</span><span>MQTT</span>
+            </div>
+        </div>
+
+        <!-- ===== HELLO / ABOUT ===== -->
+        <section id="hello" class="section">
+            <div class="wrap">
+                <div class="section__head">
+                    <span class="section__index">01 / intro</span>
+                    <h2 class="section__title">Hi<em>_</em></h2>
+                </div>
+                <p class="scrub-text">Senior Full-Stack Engineer with 5+ years of experience building scalable applications across fintech, healthcare, and consumer technology sectors. Proven track record of leading technical initiatives, delivering high-impact solutions, and driving measurable business results. Expert in modern web technologies, cloud infrastructure, and AI integration with strong leadership skills in mentoring teams and managing complex projects. Passionate about transforming innovative ideas into production-ready solutions that solve real-world problems and create significant value for organizations and users alike.</p>
+
+                <div class="stats">
+                    <div class="stat gs-reveal">
+                        <span class="stat__num" data-count="5" data-suffix="+">0</span>
+                        <span class="stat__label">years of experience</span>
+                    </div>
+                    <div class="stat gs-reveal">
+                        <span class="stat__num" data-count="22" data-suffix="">0</span>
+                        <span class="stat__label">bitcoin ATMs deployed in Spain</span>
+                    </div>
+                    <div class="stat gs-reveal">
+                        <span class="stat__num" data-count="99.9" data-suffix="%">0</span>
+                        <span class="stat__label">uptime on critical medical workflows</span>
+                    </div>
+                    <div class="stat gs-reveal">
+                        <span class="stat__num" data-count="80" data-suffix="%">0</span>
+                        <span class="stat__label">manual work cut with cloud OCR</span>
+                    </div>
+                </div>
+
+                <a href="assets/mohsinsapra.pdf" class="btn gs-reveal" download>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+                    Download CV
+                </a>
+            </div>
+        </section>
+
+        <!-- ===== RESUME ===== -->
+        <section id="resume" class="section">
+            <div class="wrap">
+                <div class="section__head">
+                    <span class="section__index">02 / experience &amp; skills</span>
+                    <h2 class="section__title">Resume<em>_</em></h2>
+                </div>
+                <p class="resume__lede gs-reveal">I strive to create efficient and user-friendly solutions that meet the needs of modern technology. With a passion for innovation and a strong attention to detail, I am dedicated to producing high-quality software that exceeds expectations.</p>
+
+                <h3 class="resume__label">employment</h3>
+
+                <div class="job-stack">
+                    <article class="job-card">
+                        <div class="job-card__head">
+                            <div>
+                                <h4 class="job-card__title">Full Stack Engineer</h4>
+                                <p class="job-card__company">Dosell AB — Sweden</p>
+                            </div>
+                            <p class="job-card__date">Dec 2022 — Present</p>
+                        </div>
+                        <ul class="job-card__points">
+                            <li>Spearheaded <strong>Cloud OCR automation</strong> to eliminate manual alarm processing bottlenecks at ICE Malaga. Built Django backend with Celery parallel processing and AWS infrastructure (ECS, ECR, ALB, VPC) including auto-calling mechanism. Reduced manual intervention by 80%, cut recurring costs, and improved response times by 60%.</li>
+                            <li>Led development of <strong>Dosell's first hybrid application</strong> (iOS/Android/Web) to address procurement and customer management gaps. Delivered Flutter-based solution with secure API integrations within 2-month deadline. Enabled Finnish deal of 500-1000 units and secured 1M SEK ARR milestone.</li>
+                            <li>Architected scalable <strong>React.js and Next.js medical applications</strong> to resolve performance bottlenecks. Implemented optimization strategies, code splitting, and responsive design patterns. Improved load times by 40% and achieved 99.9% uptime for critical workflows.</li>
+                            <li>Designed <strong>microservices architecture</strong> using NestJS, PostgreSQL, and event-driven patterns to streamline backend operations. Replaced legacy systems causing data processing bottlenecks. Increased throughput by 3x and reduced latency from 2000ms to 300ms.</li>
+                            <li><strong>Mentored 5 junior developers</strong> through code reviews, architecture guidance, and technical workshops on React, Node.js, and cloud deployment. Established sustainable knowledge sharing culture and development best practices. All mentees promoted within 12 months, improved code quality by 50%.</li>
                         </ul>
-                    </nav>
+                    </article>
+
+                    <article class="job-card">
+                        <div class="job-card__head">
+                            <div>
+                                <h4 class="job-card__title">Software Engineer</h4>
+                                <p class="job-card__company">Matrix Network International B.V. — Netherlands</p>
+                            </div>
+                            <p class="job-card__date">Apr 2020 — Nov 2022</p>
+                        </div>
+                        <ul class="job-card__points">
+                            <li>Architected and developed complete <strong>Bitcoin ATM solution</strong> for cryptocurrency adoption across Spain, working fully remotely. Built end-to-end system including hardware integration, backend microservices with AWS SQS, frontend website, and Bitcoin mainnet/Lightning Network integration. Successfully deployed 22 ATMs across Spanish locations, processing secure cash and debit card transactions for bitcoin purchases.</li>
+                            <li>Built <strong>Venrecarga mobile recharge service</strong> addressing critical communication needs for Venezuelan market during economic crisis. Integrated multi-payment gateway solution with BunQ Bank, Stripe, PayPal, and OpenNode for cryptocurrency payments, providing continuous support and feature development. Generated significant revenue impact for company through high-volume mobile top-up transactions serving Venezuelan diaspora worldwide.</li>
+                            <li>Developed <strong>Rembit cryptocurrency remittance service</strong> enabling users to send funds instantly to loved ones over Master and Visa networks. Implemented secure KYC compliance endpoints, anti-money laundering checks, and ETL pipeline transforming S3 data to MySQL using Athena with 24-hour automated processing. Achieved €10,000+ in Bitcoin transfers within first month of launch, demonstrating strong market adoption and technical reliability.</li>
+                        </ul>
+                    </article>
                 </div>
-                <div class="menu__wrapper col-md-12 d-lg-none">
-                    <button type="button" class="menu__mobile-button">
-                        <span><i class="fa fa-bars" aria-hidden="true"></i></span>
-                    </button>
+
+                <h3 class="resume__label">education</h3>
+                <div class="edu-grid">
+                    <div class="edu-card gs-reveal">
+                        <p class="edu-card__date">2022 —</p>
+                        <h4 class="edu-card__title">Masters of Computer Science</h4>
+                        <p class="edu-card__school">Blekinge Institute of Technology, Sweden</p>
+                        <ol>
+                            <li>Data Science</li>
+                            <li>Robotics</li>
+                            <li>IT Management</li>
+                        </ol>
+                    </div>
+                    <div class="edu-card gs-reveal">
+                        <p class="edu-card__date">2016 — 2020</p>
+                        <h4 class="edu-card__title">Bachelor Computer Science</h4>
+                        <p class="edu-card__school">UOG, Pakistan</p>
+                        <ol>
+                            <li>Technical Support Head in University Event Management Student Society</li>
+                            <li>Best Final Year Project</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <h3 class="resume__label">technical skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-group gs-reveal">
+                        <h4>Languages</h4>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">JavaScript (ES6+), TypeScript</span><span class="skill__value" data-value="90">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="90"></div></div>
+                        </div>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">Python</span><span class="skill__value" data-value="85">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="85"></div></div>
+                        </div>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">Dart</span><span class="skill__value" data-value="80">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="80"></div></div>
+                        </div>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">SQL</span><span class="skill__value" data-value="85">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="85"></div></div>
+                        </div>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">HTML5, CSS3</span><span class="skill__value" data-value="95">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="95"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-group gs-reveal">
+                        <h4>Frontend</h4>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">React.js</span><span class="skill__value" data-value="90">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="90"></div></div>
+                        </div>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">Tailwind CSS</span><span class="skill__value" data-value="85">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="85"></div></div>
+                        </div>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">Responsive UI Design</span><span class="skill__value" data-value="90">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="90"></div></div>
+                        </div>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">Three.js (basic 3D integration)</span><span class="skill__value" data-value="70">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="70"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-group gs-reveal">
+                        <h4>Backend</h4>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">Node.js (learning stage)</span><span class="skill__value" data-value="60">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="60"></div></div>
+                        </div>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">Express.js (can be picked up quickly)</span><span class="skill__value" data-value="65">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="65"></div></div>
+                        </div>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">Django (strong experience)</span><span class="skill__value" data-value="90">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="90"></div></div>
+                        </div>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">REST API (JWT Auth, Swagger Docs)</span><span class="skill__value" data-value="85">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="85"></div></div>
+                        </div>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">WebSockets (basic understanding)</span><span class="skill__value" data-value="55">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="55"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-group gs-reveal">
+                        <h4>Databases</h4>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">MongoDB (ready to use with MERN)</span><span class="skill__value" data-value="80">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="80"></div></div>
+                        </div>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">MySQL (advanced usage)</span><span class="skill__value" data-value="90">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="90"></div></div>
+                        </div>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">Database Schema Design &amp; Optimization</span><span class="skill__value" data-value="85">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="85"></div></div>
+                        </div>
+                        <h4 class="skill-group__second">Mobile Development</h4>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">Flutter (Beamer, BLE, SharedPreferences)</span><span class="skill__value" data-value="85">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="85"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-group gs-reveal">
+                        <h4>DevOps / Deployment</h4>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">Docker &amp; Docker Compose</span><span class="skill__value" data-value="85">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="85"></div></div>
+                        </div>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">GitHub Actions, GitLab CI</span><span class="skill__value" data-value="80">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="80"></div></div>
+                        </div>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">AWS (EC2, ECS, VPC, ALB, Subnets)</span><span class="skill__value" data-value="75">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="75"></div></div>
+                        </div>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">Nginx (reverse proxy config)</span><span class="skill__value" data-value="70">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="70"></div></div>
+                        </div>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">cPanel automated deployments</span><span class="skill__value" data-value="80">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="80"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-group gs-reveal">
+                        <h4>Automation, IoT &amp; Embedded</h4>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">Arduino (basic electronics and automation)</span><span class="skill__value" data-value="70">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="70"></div></div>
+                        </div>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">Raspberry Pi (Linux-based automation)</span><span class="skill__value" data-value="75">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="75"></div></div>
+                        </div>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">Python scripting for automation</span><span class="skill__value" data-value="85">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="85"></div></div>
+                        </div>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">Git Hooks for CI triggers</span><span class="skill__value" data-value="70">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="70"></div></div>
+                        </div>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">Bash scripting basics</span><span class="skill__value" data-value="65">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="65"></div></div>
+                        </div>
+                        <div class="skill">
+                            <p class="skill__row"><span class="skill__name">OCR data workflows (automated pipeline)</span><span class="skill__value" data-value="75">0%</span></p>
+                            <div class="skill__bar"><div class="skill__fill" data-value="75"></div></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!--Main menu-->
+        </section>
 
-    <!-- Mobile menu -->
-    <div class="mobile-menu d-lg-none">
-        <div class="container">
-            <div class="mobile-menu__close">
-                <span><i class="mdi mdi-close" aria-hidden="true"></i></span>
-            </div>
-            <nav class="mobile-menu__wrapper">
-                <ul>
-                    <li><a href="#hello">Hello</a></li>
-                    <li><a href="#resume">Resume</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#testimonials">testimonials</a></li>
-                    <li><a href="#blog">blog</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-    <!-- Mobile menu -->
-
-    <!--Header-->
-    <header class="main-header" style="background-image: url(assets/img/img_bg_header.jpg)">
-        <div class="container">
-            <div class="row personal-profile">
-                <div class="col-md-4 personal-profile__avatar">
-                    <img src="assets/img/main.png" alt="avatar" style="object-fit: contain; box-shadow: 0 4px 8px rgba(0,0,0,0.2); border-radius: 8px; width: 100%; height: auto;">
+        <!-- ===== PROJECTS: pinned horizontal gallery on desktop ===== -->
+        <section id="portfolio" class="section section--projects">
+            <div class="projects-pin">
+                <div class="wrap projects-head">
+                    <div>
+                        <span class="section__index">03 / selected work</span>
+                        <h2 class="section__title">My projects<em>_</em></h2>
+                    </div>
+                    <p class="projects-hint mono">scroll →</p>
                 </div>
-                <div class="col-md-8">
-                    <p class="personal-profile__name">Muhammad Mohsin_</p>
-                    <p class="personal-profile__work">Full Stack Developer</p>
-                    <div class="personal-profile__contacts">
-                        <dl class="contact-list contact-list__opacity-titles">
+                <div class="projects-track">
 
-                            <dt>Phone:</dt>
-                            <dd><a href="tel:46764361487">+46764361487</a></dd>
-                            <dt>Email:</dt>
-                            <dd><a href="mailto:mohsin.sapra@gmail.com">mohsin.sapra@gmail.com</a></dd>
-                            <dt>Address:</dt>
+                    <article class="pcard" data-tag="web-sites">
+                        <div class="pcard__media"><img src="assets/img/laptop_portfolio.png" alt="Portfolio Laptop project" loading="lazy"></div>
+                        <div class="pcard__body">
+                            <span class="pcard__tag">web-sites</span>
+                            <h3 class="pcard__title">Portfolio Laptop</h3>
+                            <p class="pcard__desc">An interactive Three.js portfolio website featuring a 3D laptop model with user interactions. The project showcases advanced 3D web development skills with smooth animations and responsive design. Users can interact with the laptop model to explore different portfolio sections and projects.</p>
+                            <ul class="pcard__stack"><li>Three.js</li><li>JavaScript</li><li>WebGL</li><li>HTML5</li><li>CSS3</li></ul>
+                            <a href="https://mohsinsapra.github.io/portfolio-laptop" class="pcard__link" target="_blank" rel="noopener">View Project</a>
+                        </div>
+                    </article>
+
+                    <article class="pcard" data-tag="web-sites">
+                        <div class="pcard__media"><img src="assets/img/sliencio.png" alt="Sliencio project" loading="lazy"></div>
+                        <div class="pcard__body">
+                            <span class="pcard__tag">web-sites</span>
+                            <h3 class="pcard__title">Sliencio</h3>
+                            <p class="pcard__desc">A stunning website combining GSAP and Three.js to create immersive animations and interactive 3D experiences. The project demonstrates advanced animation techniques with smooth transitions, particle effects, and responsive design that adapts beautifully across all devices.</p>
+                            <ul class="pcard__stack"><li>GSAP</li><li>Three.js</li><li>JavaScript</li><li>WebGL</li><li>CSS3</li></ul>
+                            <a href="https://mohsinsapra.github.io/sliencio" class="pcard__link" target="_blank" rel="noopener">View Project</a>
+                        </div>
+                    </article>
+
+                    <article class="pcard" data-tag="web-sites">
+                        <div class="pcard__media"><img src="assets/img/ted.png" alt="TED Landing project" loading="lazy"></div>
+                        <div class="pcard__body">
+                            <span class="pcard__tag">web-sites</span>
+                            <h3 class="pcard__title">TED Landing</h3>
+                            <p class="pcard__desc">A modern and engaging landing page built with GSAP animations. Features smooth scrolling effects, interactive elements, and eye-catching animations that enhance user experience. The design focuses on storytelling through motion graphics and seamless transitions.</p>
+                            <ul class="pcard__stack"><li>GSAP</li><li>JavaScript</li><li>HTML5</li><li>CSS3</li><li>ScrollTrigger</li></ul>
+                            <a href="https://mohsinsapra.github.io/ted-landing" class="pcard__link" target="_blank" rel="noopener">View Project</a>
+                        </div>
+                    </article>
+
+                    <article class="pcard" data-tag="mobile apps">
+                        <div class="pcard__media"><img src="assets/img/veg_shop.png" alt="Veg Shop Manager app" loading="lazy"></div>
+                        <div class="pcard__body">
+                            <span class="pcard__tag">mobile apps</span>
+                            <h3 class="pcard__title">Veg Shop Manager</h3>
+                            <p class="pcard__desc">A comprehensive Flutter mobile application designed for grocery store management in Spain. Features inventory management, sales tracking, customer management, and multi-language support. Built with modern Flutter architecture and designed for efficient grocery store operations.</p>
+                            <ul class="pcard__stack"><li>Flutter</li><li>Dart</li><li>Firebase</li><li>SQLite</li><li>Provider</li></ul>
+                            <a href="https://mohsinsapra.github.io/veg_shop_manager" class="pcard__link" target="_blank" rel="noopener">View Project</a>
+                        </div>
+                    </article>
+
+                    <article class="pcard" data-tag="web-sites">
+                        <div class="pcard__media pcard__media--embed">
+                            <blockquote class="twitter-tweet" data-media-max-width="420"><p lang="es" dir="ltr">Convertir calderilla en <a href="https://twitter.com/hashtag/Bitcoin?src=hash&amp;ref_src=twsrc%5Etfw">#Bitcoin</a> y recibirlo vía <a href="https://twitter.com/hashtag/LightningNetwork?src=hash&amp;ref_src=twsrc%5Etfw">#LightningNetwork</a> gracias a los cajeros <a href="https://twitter.com/hashtag/ATMbitbit?src=hash&amp;ref_src=twsrc%5Etfw">#ATMbitbit</a><br><br>Visto en Madrid, España 🇪🇦 <a href="https://t.co/FRdtpCTQW9">pic.twitter.com/FRdtpCTQW9</a></p>&mdash; La Taberna de Bitcoin (@TabernaBitcoin) <a href="https://twitter.com/TabernaBitcoin/status/1573190100917407745?ref_src=twsrc%5Etfw">September 23, 2022</a></blockquote>
+                        </div>
+                        <div class="pcard__body">
+                            <span class="pcard__tag">web-sites</span>
+                            <h3 class="pcard__title">Bitcoin ATM (ATMbitbit)</h3>
+                            <p class="pcard__desc">A revolutionary Bitcoin ATM solution that allows users to convert small change into Bitcoin and receive it via Lightning Network. Deployed across multiple locations in Spain. Convertir calderilla en #Bitcoin y recibirlo vía #LightningNetwork gracias a los cajeros #ATMbitbit. Visto en Madrid, España 🇪🇦.</p>
+                            <ul class="pcard__stack"><li>Bitcoin</li><li>Lightning Network</li><li>Hardware Integration</li><li>Payment Processing</li><li>Blockchain</li></ul>
+                            <a href="https://x.com/TabernaBitcoin/status/1573190100917407745" class="pcard__link" target="_blank" rel="noopener">View Project</a>
+                        </div>
+                    </article>
+
+                    <article class="pcard" data-tag="mobile apps">
+                        <div class="pcard__media"><img src="assets/img/kunjah_waly.png" alt="Home automation dashboard" loading="lazy"></div>
+                        <div class="pcard__body">
+                            <span class="pcard__tag">mobile apps</span>
+                            <h3 class="pcard__title">Full Stack Home Automation | IoT + Web Dashboard Control</h3>
+                            <p class="pcard__desc">Take control of your home with this custom-built full stack home automation system! Built with Raspberry Pi, smart sensors, and a sleek frontend dashboard — control lights, fans, and more from anywhere. Real-time status updates, backend APIs, and Firebase or MQTT integration make it smart and scalable.</p>
+                            <ul class="pcard__stack"><li>Raspberry Pi</li><li>IoT Sensors</li><li>Firebase</li><li>MQTT</li><li>React Dashboard</li><li>Python</li></ul>
+                            <a href="https://www.facebook.com/reel/2237004176434099" class="pcard__link" target="_blank" rel="noopener">View Project</a>
+                        </div>
+                    </article>
+
+                    <article class="pcard" data-tag="web-sites">
+                        <div class="pcard__media"><img src="assets/img/vending.png" alt="Smart vending machine" loading="lazy"></div>
+                        <div class="pcard__body">
+                            <span class="pcard__tag">web-sites</span>
+                            <h3 class="pcard__title">Smart Vending Machine with Bill Acceptor | Raspberry Pi + Backend</h3>
+                            <p class="pcard__desc">Watch this vending machine come to life! Built with Raspberry Pi and integrated bill acceptor hardware — this smart vending solution features a full stack backend, product tracking, and automated dispense control. Ideal for real-world deployments. Includes real-time payment processing, inventory system, and user interface.</p>
+                            <ul class="pcard__stack"><li>Raspberry Pi</li><li>Hardware Integration</li><li>Payment Processing</li><li>Inventory System</li><li>Python</li><li>Embedded Systems</li></ul>
+                            <a href="https://www.facebook.com/reel/1636941573357988" class="pcard__link" target="_blank" rel="noopener">View Project</a>
+                        </div>
+                    </article>
+
+                    <article class="pcard" data-tag="web-sites">
+                        <div class="pcard__media"><img src="assets/img/taxi.png" alt="Taxi License Exam Preparation Application" loading="lazy"></div>
+                        <div class="pcard__body">
+                            <span class="pcard__tag">web-sites</span>
+                            <h3 class="pcard__title">Taxi License Exam Prep</h3>
+                            <p class="pcard__desc">A comprehensive mobile application designed to help aspiring taxi drivers and taxi company operators prepare for their licensing examinations. Features interactive practice tests, detailed explanations, and progress tracking to ensure users are fully prepared for their certification exams. Built with Flutter for cross-platform mobile experience and Django REST framework for robust backend services.</p>
+                            <ul class="pcard__stack"><li>Flutter</li><li>Dart</li><li>Django</li><li>Python</li><li>REST API</li><li>Cross-platform Mobile</li></ul>
+                            <a href="https://mohsinsapra.github.io/drivetest-homepage/" class="pcard__link" target="_blank" rel="noopener">View Project</a>
+                        </div>
+                    </article>
+
+                    <article class="pcard" data-tag="web-sites">
+                        <div class="pcard__media"><img src="assets/img/cpp.png" alt="C++ endless runner game" loading="lazy"></div>
+                        <div class="pcard__body">
+                            <span class="pcard__tag">game dev</span>
+                            <h3 class="pcard__title">Endless Runner Game in C++ | SFML Subway Surfer Clone</h3>
+                            <p class="pcard__desc">Built a Subway Surfer-style endless runner using C++ and the SFML library! Smooth animations, jump mechanics, obstacle collision, and increasing difficulty all packed into one fun demo. Perfect for learning game loops, rendering, and handling real-time user input in C++.</p>
+                            <ul class="pcard__stack"><li>C++</li><li>SFML</li><li>Game Development</li><li>Game Loops</li><li>Collision Detection</li><li>Real-time Input</li></ul>
+                            <a href="https://www.facebook.com/reel/1060395514094977" class="pcard__link" target="_blank" rel="noopener">View Project</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TESTIMONIALS ===== -->
+        <section id="testimonials" class="section testimonials">
+            <div class="wrap">
+                <div class="section__head">
+                    <span class="section__index">04 / kind words</span>
+                    <h2 class="section__title">Testimonials<em>_</em></h2>
+                </div>
+                <div class="slider gs-reveal">
+                    <p class="quote-mark">”</p>
+                    <div class="slider__viewport">
+                        <div class="slider__track">
+                            <div class="slide">
+                                <p class="slide__text">I had the pleasure of working with Muhammad at iZafe Group and Dosell, and I can confidently say that he excels in problem-solving, collaboration, and work ethic. Muhammad has a talent for tackling complex problems. His collaboration with the finance team has been exemplary. Muhammad fosters a cooperative environment and ensures everyone's input is valued, leading to more cohesive and efficient teamwork. Muhammad's problem-solving abilities, teamwork, and strong work ethic make him a great asset. I would definitely recommend him!</p>
+                                <p class="slide__who"><span class="slide__name">Ida Almgren</span><span class="slide__role">CFO Omnia</span></p>
+                            </div>
+                            <div class="slide">
+                                <p class="slide__text">I wholeheartedly recommend Mohammed. He's incredibly innovative, consistently generating creative solutions that drive projects forward. His productivity is remarkable; he takes ownership of tasks and delivers high-quality results within deadlines. Mohammed is not only skilled but also a friendly, cooperative colleague, fostering a positive work environment. His enthusiasm to learn is admirable; he's always eager to acquire new knowledge. Mohammed's blend of innovation, productivity, affability, and eagerness to learn makes him an invaluable asset to any team.</p>
+                                <p class="slide__who"><span class="slide__name">Pontus Olsson</span><span class="slide__role">Head of Customer Success</span></p>
+                            </div>
+                            <div class="slide">
+                                <p class="slide__text">Muhammad is very thorough in his work and extremely professional. He delivers on time and often with an innovative twist that makes the deliveries awesome. Muhammad is a positive and happy person with a lot of humor and laughter. In total I can recommend Muhammad as a team member who contributes great in a high performance team.</p>
+                                <p class="slide__who"><span class="slide__name">Jojo Joseph</span><span class="slide__role">Software Developer at Toyota Material Handling</span></p>
+                            </div>
+                            <div class="slide">
+                                <p class="slide__text">Mohsin is a solid developer and he has a way with words. He can take any programming concepts and present to you in easy, concise and relatable words. He is extremely organized and reliable. Mohsin is someone who easily merges product thinking and his technical prowess to bring them together. I've seen him easily straddle several planes of thinking and complexity while being able to compartmentalize problems and bringing the effects of a solution systemwide. His solutions and innovation were commendable during his consociation with me. Clear thinker, Scalable coding and tangible! Comes highly recommended!</p>
+                                <p class="slide__who"><span class="slide__name">Shahid Zaman</span><span class="slide__role">Software Engineer | React JS | Next JS | Express | Node JS</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider__controls">
+                        <button class="slider__btn slider__btn--prev" aria-label="Previous testimonial">←</button>
+                        <div class="slider__dots"></div>
+                        <button class="slider__btn slider__btn--next" aria-label="Next testimonial">→</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT ===== -->
+        <section id="contact" class="section section--contact">
+            <div class="wrap">
+                <div class="section__head">
+                    <span class="section__index">05 / say hello</span>
+                    <h2 class="section__title">Get in touch<em>_</em></h2>
+                </div>
+                <a class="contact__big-mail gs-reveal" href="mailto:mohsin.sapra@gmail.com">mohsin.sapra<wbr>@gmail.com</a>
+                <div class="contact__grid">
+                    <div class="gs-reveal">
+                        <dl class="contact__list">
+                            <dt>Phone</dt>
+                            <dd><a href="tel:46764361487">+46 76 436 14 87</a></dd>
+                            <dt>Skype</dt>
+                            <dd><a href="skype:mohsin.sapra">mohsin.sapra</a></dd>
+                            <dt>Location</dt>
                             <dd>Stockholm, Sweden</dd>
                         </dl>
-                    </div>
-                    <p class="personal-profile__social">
-                        <a href="https://www.github.com/mohsinsapra/" target="_blank"><i
-                                class="fa fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/mohsinsapra/" target="_blank"><i
-                                class="fa fa-linkedin-square"></i></a>
-                        <a href="https://www.facebook.com/mohsinsapraa/" target="_blank">
-                            <i class="fa fa-facebook-square"></i>
-                        </a>
-                        <a href="https://www.twitter.com/mohsinsapra/" target="_blank">
-                            <i class="fa fa-twitter-square"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@mohsinsapraa" target="_blank">
-                            <i class="fa fa-video-camera"></i>
-                        </a>
-
-                    </p>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!--Header-->
-
-    <!--Hello-->
-    <section id="hello" class="container section">
-        <div class="row">
-            <div class="col-md-10">
-                <h2 id="hello_header" class="section__title">Hi_</h2>
-                <p class="section__description">Senior Full-Stack Engineer with 5+ years of experience building scalable applications across fintech, healthcare, and consumer technology sectors. Proven track record of leading technical initiatives, delivering high-impact solutions, and driving measurable business results. Expert in modern web technologies, cloud infrastructure, and AI integration with strong leadership skills in mentoring teams and managing complex projects. Passionate about transforming innovative ideas into production-ready solutions that solve real-world problems and create significant value for organizations and users alike.
-                </p>
-                <a href="assets/mohsinsapra.pdf" class="section_btn site-btn"><img src="assets/img/img_btn_icon.png"
-                        alt="">Download CV</a>
-            </div>
-        </div>
-    </section>
-    <!--Hello-->
-
-    <hr>
-
-    <!--Resume-->
-    <section id="resume" class="container section">
-        <div class="row">
-            <div class="col-md-10">
-                <h2 id="resume_header" class="section__title">Resume_</h2>
-                <p class="section__description">
-                    I strive to create efficient and user-friendly solutions that meet the needs of modern technology.
-                    With a passion
-                    for innovation and a strong attention to detail, I am dedicated to producing high-quality software
-                    that exceeds
-                    expectations</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-8 section__resume resume-list">
-                <h3 class="resume-list_title">employment</h3>
-                <div class="resume-list__block">
-                    <p class="resume-list__block-title">Full Stack Engineer | Dosell AB, Sweden</p>
-                    <p class="resume-list__block-date">Dec 2022 - Present</p>
-                    <p>
-                        • Spearheaded Cloud OCR automation to eliminate manual alarm processing bottlenecks at ICE Malaga. Built Django backend with Celery parallel processing and AWS infrastructure (ECS, ECR, ALB, VPC) including auto-calling mechanism. Reduced manual intervention by 80%, cut recurring costs, and improved response times by 60%.<br><br>
-                        • Led development of Dosell's first hybrid application (iOS/Android/Web) to address procurement and customer management gaps. Delivered Flutter-based solution with secure API integrations within 2-month deadline. Enabled Finnish deal of 500-1000 units and secured 1M SEK ARR milestone.<br><br>
-                        • Architected scalable React.js and Next.js medical applications to resolve performance bottlenecks. Implemented optimization strategies, code splitting, and responsive design patterns. Improved load times by 40% and achieved 99.9% uptime for critical workflows.<br><br>
-                        • Designed microservices architecture using NestJS, PostgreSQL, and event-driven patterns to streamline backend operations. Replaced legacy systems causing data processing bottlenecks. Increased throughput by 3x and reduced latency from 2000ms to 300ms.<br><br>
-                        • Mentored 5 junior developers through code reviews, architecture guidance, and technical workshops on React, Node.js, and cloud deployment. Established sustainable knowledge sharing culture and development best practices. All mentees promoted within 12 months, improved code quality by 50%.
-                    </p>
-                </div>
-                <div class="resume-list__block">
-                    <p class="resume-list__block-title">Software Engineer | Matrix Network International B.V., Netherlands</p>
-                    <p class="resume-list__block-date">April 2020 - Nov 2022</p>
-                    <p>
-                        • Architected and developed complete Bitcoin ATM solution for cryptocurrency adoption across Spain, working fully remotely. Built end-to-end system including hardware integration, backend microservices with AWS SQS, frontend website, and Bitcoin mainnet/Lightning Network integration. Successfully deployed 22 ATMs across Spanish locations, processing secure cash and debit card transactions for bitcoin purchases.<br><br>
-                        • Built Venrecarga mobile recharge service addressing critical communication needs for Venezuelan market during economic crisis. Integrated multi-payment gateway solution with BunQ Bank, Stripe, PayPal, and OpenNode for cryptocurrency payments, providing continuous support and feature development. Generated significant revenue impact for company through high-volume mobile top-up transactions serving Venezuelan diaspora worldwide.<br><br>
-                        • Developed Rembit cryptocurrency remittance service enabling users to send funds instantly to loved ones over Master and Visa networks. Implemented secure KYC compliance endpoints, anti-money laundering checks, and ETL pipeline transforming S3 data to MySQL using Athena with 24-hour automated processing. Achieved €10,000+ in Bitcoin transfers within first month of launch, demonstrating strong market adoption and technical reliability.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-8 section__resume resume-list">
-                <h3 class="resume-list_title">education</h3>
-                <div class="resume-list__block">
-                    <p class="resume-list__block-title"> Masters of Computer Science | Blekinge Institute of Technology,
-                        Sweden
-                    </p>
-                    <p class="resume-list__block-date">2022 - </p>
-                    <p>
-                    <ol>
-                        <li> Data Science</li>
-                        <li> Robotics</li>
-                        <li>IT Management</li>
-                    </ol>
-                    </p>
-
-                </div>
-                <div class="resume-list__block">
-                    <p class="resume-list__block-title"> Bachelor Computer Science | UOG, Pakistan
-                    </p>
-                    <p class="resume-list__block-date">2016 - 2020</p>
-                    <p>
-                    <ol>
-                        <li> Technical Support Head in University Event Management Student Society,</li>
-                        <li>Best Final Year Project</li>
-                    </ol>
-                    </p>
-
-                </div>
-
-            </div>
-        </div>
-        <div class="row section__resume progress-list js-progress-list">
-            <div class="col-md-12">
-                <h3 class="progress-list__title">Technical Skills</h3>
-            </div>
-            <div class="col-md-4">
-                <h4 class="resume-list_title">Languages</h4>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">JavaScript (ES6+), TypeScript</span>
-                        <span class="progress-list__skill-value">90%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                            aria-valuemax="100">
+                        <div class="contact__social">
+                            <a href="https://www.facebook.com/mohsinsapraa/" target="_blank" rel="noopener">Facebook</a>
+                            <a href="https://www.linkedin.com/in/mohsinsapra/" target="_blank" rel="noopener">LinkedIn</a>
+                            <a href="https://www.github.com/mohsinsapra/" target="_blank" rel="noopener">GitHub</a>
+                            <a href="https://www.tiktok.com/@mohsinsapraa" target="_blank" rel="noopener">TikTok</a>
                         </div>
                     </div>
-                </div>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">Python</span>
-                        <span class="progress-list__skill-value">85%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">Dart</span>
-                        <span class="progress-list__skill-value">80%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">SQL</span>
-                        <span class="progress-list__skill-value">85%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">HTML5, CSS3</span>
-                        <span class="progress-list__skill-value">95%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-
-                <h4 class="resume-list_title">Frontend</h4>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">React.js</span>
-                        <span class="progress-list__skill-value">90%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">Tailwind CSS</span>
-                        <span class="progress-list__skill-value">85%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">Responsive UI Design</span>
-                        <span class="progress-list__skill-value">90%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">Three.js (basic 3D integration)</span>
-                        <span class="progress-list__skill-value">70%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <h4 class="resume-list_title">Backend</h4>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">Node.js (learning stage)</span>
-                        <span class="progress-list__skill-value">60%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">Express.js (can be picked up quickly)</span>
-                        <span class="progress-list__skill-value">65%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">Django (strong experience)</span>
-                        <span class="progress-list__skill-value">90%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">REST API (JWT Auth, Swagger Docs)</span>
-                        <span class="progress-list__skill-value">85%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">WebSockets (basic understanding)</span>
-                        <span class="progress-list__skill-value">55%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-
-                <h4 class="resume-list_title">Databases</h4>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">MongoDB (ready to use with MERN)</span>
-                        <span class="progress-list__skill-value">80%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">MySQL (advanced usage)</span>
-                        <span class="progress-list__skill-value">90%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">Database Schema Design & Optimization</span>
-                        <span class="progress-list__skill-value">85%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-
-                <h4 class="resume-list_title">Mobile Development</h4>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">Flutter (Beamer, BLE, SharedPreferences)</span>
-                        <span class="progress-list__skill-value">85%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <h4 class="resume-list_title">DevOps / Deployment</h4>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">Docker & Docker Compose</span>
-                        <span class="progress-list__skill-value">85%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">GitHub Actions, GitLab CI</span>
-                        <span class="progress-list__skill-value">80%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">AWS (EC2, ECS, VPC, ALB, Subnets)</span>
-                        <span class="progress-list__skill-value">75%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">Nginx (reverse proxy config)</span>
-                        <span class="progress-list__skill-value">70%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">cPanel automated deployments</span>
-                        <span class="progress-list__skill-value">80%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-
-                <h4 class="resume-list_title">Automation, IoT & Embedded Systems</h4>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">Arduino (basic electronics and automation)</span>
-                        <span class="progress-list__skill-value">70%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">Raspberry Pi (Linux-based automation)</span>
-                        <span class="progress-list__skill-value">75%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">Python scripting for automation</span>
-                        <span class="progress-list__skill-value">85%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">Git Hooks for CI triggers</span>
-                        <span class="progress-list__skill-value">70%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">Bash scripting basics</span>
-                        <span class="progress-list__skill-value">65%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-                <div class="progress-list__skill">
-                    <p>
-                        <span class="progress-list__skill-title">OCR data workflows (automated pipeline)</span>
-                        <span class="progress-list__skill-value">75%</span>
-                    </p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                            aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--Resume-->
-
-    <!--Portfolio-->
-    <section id="portfolio" class="container section">
-        <div class="row">
-            <div class="col-md-12">
-                <h2 id="portfolio_header" class="section__title">My projects_</h2>
-            </div>
-        </div>
-        <div class="row portfolio-menu">
-            <div class="col-md-12">
-                <nav>
-                    <ul>
-                        <li><a href="" data-portfolio-target-tag="all">all</a></li>
-                        <li><a href="" data-portfolio-target-tag="mobile apps">mobile apps</a></li>
-                        <li><a href="" data-portfolio-target-tag="web-sites">web-sites</a></li>
-
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <div class="portfolio-cards">
-            <div class="row project-card" data-toggle="modal" data-target="#portfolioModal"
-                data-portfolio-tag="web-sites">
-                <div class="col-md-6 col-lg-5 project-card__img">
-                    <img class="" src="assets/img/laptop_portfolio.png" alt="project-img">
-                </div>
-                <div class="col-md-6 col-lg-7 project-card__info">
-                    <h3 class="project-card__title">Portfolio Laptop</h3>
-                    <p class="project-card__description">
-                        An interactive Three.js portfolio website featuring a 3D laptop model with user interactions. 
-                        The project showcases advanced 3D web development skills with smooth animations and responsive 
-                        design. Users can interact with the laptop model to explore different portfolio sections and projects.
-                    </p>
-                    <p class="project-card__stack">Used stack:</p>
-                    <ul class="tags">
-                        <li>Three.js</li>
-                        <li>JavaScript</li>
-                        <li>WebGL</li>
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                    </ul>
-                    <a href="https://mohsinsapra.github.io/portfolio-laptop" class="project-card__link" target="_blank">View Project ↗</a>
-                </div>
-            </div>
-            <div class="row project-card" data-toggle="modal" data-target="#portfolioModal"
-                data-portfolio-tag="web-sites">
-                <div class="col-md-6 col-lg-5 project-card__img">
-                    <img class="" src="assets/img/sliencio.png" alt="project-img">
-                </div>
-                <div class="col-md-6 col-lg-7 project-card__info">
-                    <h3 class="project-card__title">Sliencio</h3>
-                    <p class="project-card__description">
-                        A stunning website combining GSAP and Three.js to create immersive animations and interactive 
-                        3D experiences. The project demonstrates advanced animation techniques with smooth transitions, 
-                        particle effects, and responsive design that adapts beautifully across all devices.
-                    </p>
-                    <p class="project-card__stack">Used stack:</p>
-                    <ul class="tags">
-                        <li>GSAP</li>
-                        <li>Three.js</li>
-                        <li>JavaScript</li>
-                        <li>WebGL</li>
-                        <li>CSS3</li>
-                    </ul>
-                    <a href="https://mohsinsapra.github.io/sliencio" class="project-card__link" target="_blank">View Project ↗</a>
-                </div>
-            </div>
-            <div class="row project-card" data-toggle="modal" data-target="#portfolioModal"
-                data-portfolio-tag="web-sites">
-                <div class="col-md-6 col-lg-5 project-card__img">
-                    <img class="" src="assets/img/ted.png" alt="project-img">
-                </div>
-                <div class="col-md-6 col-lg-7 project-card__info">
-                    <h3 class="project-card__title">TED Landing</h3>
-                    <p class="project-card__description">
-                        A modern and engaging landing page built with GSAP animations. Features smooth scrolling effects, 
-                        interactive elements, and eye-catching animations that enhance user experience. The design focuses 
-                        on storytelling through motion graphics and seamless transitions.
-                    </p>
-                    <p class="project-card__stack">Used stack:</p>
-                    <ul class="tags">
-                        <li>GSAP</li>
-                        <li>JavaScript</li>
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>ScrollTrigger</li>
-                    </ul>
-                    <a href="https://mohsinsapra.github.io/ted-landing" class="project-card__link" target="_blank">View Project ↗</a>
-                </div>
-            </div>
-            <div class="row project-card" data-toggle="modal" data-target="#portfolioModal"
-                data-portfolio-tag="mobile apps">
-                <div class="col-md-6 col-lg-5 project-card__img">
-                    <img class="" src="assets/img/veg_shop.png" alt="project-img">
-                </div>
-                <div class="col-md-6 col-lg-7 project-card__info">
-                    <h3 class="project-card__title">Veg Shop Manager</h3>
-                    <p class="project-card__description">
-                        A comprehensive Flutter mobile application designed for grocery store management in Spain. 
-                        Features inventory management, sales tracking, customer management, and multi-language support. 
-                        Built with modern Flutter architecture and designed for efficient grocery store operations.
-                    </p>
-                    <p class="project-card__stack">Used stack:</p>
-                    <ul class="tags">
-                        <li>Flutter</li>
-                        <li>Dart</li>
-                        <li>Firebase</li>
-                        <li>SQLite</li>
-                        <li>Provider</li>
-                    </ul>
-                    <a href="https://mohsinsapra.github.io/veg_shop_manager" class="project-card__link" target="_blank">View Project ↗</a>
-                </div>
-            </div>
-            <div class="row project-card" data-toggle="modal" data-target="#portfolioModal"
-                data-portfolio-tag="web-sites">
-                <div class="col-md-6 col-lg-5 project-card__img">
-                    <blockquote class="twitter-tweet" data-media-max-width="560"><p lang="es" dir="ltr">Convertir calderilla en <a href="https://twitter.com/hashtag/Bitcoin?src=hash&amp;ref_src=twsrc%5Etfw">#Bitcoin</a> y recibirlo vía <a href="https://twitter.com/hashtag/LightningNetwork?src=hash&amp;ref_src=twsrc%5Etfw">#LightningNetwork</a> gracias a los cajeros <a href="https://twitter.com/hashtag/ATMbitbit?src=hash&amp;ref_src=twsrc%5Etfw">#ATMbitbit</a><br><br>Visto en Madrid, España 🇪🇦 <a href="https://t.co/FRdtpCTQW9">pic.twitter.com/FRdtpCTQW9</a></p>&mdash; La Taberna de Bitcoin (@TabernaBitcoin) <a href="https://twitter.com/TabernaBitcoin/status/1573190100917407745?ref_src=twsrc%5Etfw">September 23, 2022</a></blockquote>
-                </div>
-                <div class="col-md-6 col-lg-7 project-card__info">
-                    <h3 class="project-card__title">Bitcoin ATM (ATMbitbit)</h3>
-                    <p class="project-card__description">
-                        Convertir calderilla en #Bitcoin y recibirlo vía #LightningNetwork gracias a los cajeros #ATMbitbit. 
-                        Visto en Madrid, España 🇪🇦. A revolutionary Bitcoin ATM solution that allows users to convert small change 
-                        into Bitcoin and receive it via Lightning Network. Deployed across multiple locations in Spain.
-                    </p>
-                    <p class="project-card__stack">Used stack:</p>
-                    <ul class="tags">
-                        <li>Bitcoin</li>
-                        <li>Lightning Network</li>
-                        <li>Hardware Integration</li>
-                        <li>Payment Processing</li>
-                        <li>Blockchain</li>
-                    </ul>
-                    <a href="https://x.com/TabernaBitcoin/status/1573190100917407745" class="project-card__link" target="_blank">View Project ↗</a>
-                </div>
-            </div>
-            <div class="row project-card" data-toggle="modal" data-target="#portfolioModal"
-                data-portfolio-tag="mobile apps">
-                <div class="col-md-6 col-lg-5 project-card__img">
-                    <img class="" src="assets/img/kunjah_waly.png" alt="project-img">
-                </div>
-                <div class="col-md-6 col-lg-7 project-card__info">
-                    <h3 class="project-card__title">Full Stack Home Automation | IoT + Web Dashboard Control</h3>
-                    <p class="project-card__description">
-                        Take control of your home with this custom-built full stack home automation system! Built with Raspberry Pi, smart sensors, and a sleek frontend dashboard — control lights, fans, and more from anywhere. Real-time status updates, backend APIs, and Firebase or MQTT integration make it smart and scalable.
-                    </p>
-                    <p class="project-card__stack">Used stack:</p>
-                    <ul class="tags">
-                        <li>Raspberry Pi</li>
-                        <li>IoT Sensors</li>
-                        <li>Firebase</li>
-                        <li>MQTT</li>
-                        <li>React Dashboard</li>
-                        <li>Python</li>
-                    </ul>
-                    <a href="https://www.facebook.com/reel/2237004176434099" class="project-card__link" target="_blank">View Project ↗</a>
-                </div>
-            </div>
-            <div class="row project-card" data-toggle="modal" data-target="#portfolioModal"
-                data-portfolio-tag="web-sites">
-                <div class="col-md-6 col-lg-5 project-card__img">
-                    <img class="" src="assets/img/vending.png" alt="project-img">
-                </div>
-                <div class="col-md-6 col-lg-7 project-card__info">
-                    <h3 class="project-card__title">Smart Vending Machine with Bill Acceptor | Raspberry Pi + Backend</h3>
-                    <p class="project-card__description">
-                        Watch this vending machine come to life! Built with Raspberry Pi and integrated bill acceptor hardware — this smart vending solution features a full stack backend, product tracking, and automated dispense control. Ideal for real-world deployments. Includes real-time payment processing, inventory system, and user interface.
-                    </p>
-                    <p class="project-card__stack">Used stack:</p>
-                    <ul class="tags">
-                        <li>Raspberry Pi</li>
-                        <li>Hardware Integration</li>
-                        <li>Payment Processing</li>
-                        <li>Inventory System</li>
-                        <li>Python</li>
-                        <li>Embedded Systems</li>
-                    </ul>
-                    <a href="https://www.facebook.com/reel/1636941573357988" class="project-card__link" target="_blank">View Project ↗</a>
-                </div>
-            </div>
-            <div class="row project-card" data-toggle="modal" data-target="#portfolioModal"
-                data-portfolio-tag="web-sites">
-                <div class="col-md-6 col-lg-5 project-card__img">
-                    <img class="" src="assets/img/taxi.png" alt="Taxi License Exam Preparation Application">
-                </div>
-                <div class="col-md-6 col-lg-7 project-card__info">
-                    <h3 class="project-card__title">Taxi License Exam Prep</h3>
-                    <p class="project-card__description">
-                        A comprehensive mobile application designed to help aspiring taxi drivers and taxi company operators prepare for their licensing examinations. Features interactive practice tests, detailed explanations, and progress tracking to ensure users are fully prepared for their certification exams. Built with Flutter for cross-platform mobile experience and Django REST framework for robust backend services.
-                    </p>
-                    <p class="project-card__stack">Used stack:</p>
-                    <ul class="tags">
-                        <li>Flutter</li>
-                        <li>Dart</li>
-                        <li>Django</li>
-                        <li>Python</li>
-                        <li>REST API</li>
-                        <li>Cross-platform Mobile</li>
-                    </ul>
-                    <a href="https://mohsinsapra.github.io/drivetest-homepage/" class="project-card__link" target="_blank">View Project ↗</a>
-                </div>
-            </div>
-            <div class="row project-card" data-toggle="modal" data-target="#portfolioModal"
-                data-portfolio-tag="web-sites">
-                <div class="col-md-6 col-lg-5 project-card__img">
-                    <img class="" src="assets/img/cpp.png" alt="project-img">
-                </div>
-                <div class="col-md-6 col-lg-7 project-card__info">
-                    <h3 class="project-card__title">Endless Runner Game in C++ | SFML Subway Surfer Clone</h3>
-                    <p class="project-card__description">
-                        Built a Subway Surfer-style endless runner using C++ and the SFML library! Smooth animations, jump mechanics, obstacle collision, and increasing difficulty all packed into one fun demo. Perfect for learning game loops, rendering, and handling real-time user input in C++.
-                    </p>
-                    <p class="project-card__stack">Used stack:</p>
-                    <ul class="tags">
-                        <li>C++</li>
-                        <li>SFML</li>
-                        <li>Game Development</li>
-                        <li>Game Loops</li>
-                        <li>Collision Detection</li>
-                        <li>Real-time Input</li>
-                    </ul>
-                    <a href="https://www.facebook.com/reel/1060395514094977" class="project-card__link" target="_blank">View Project ↗</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--Portfolio-->
-
-    <!--Testimonials-->
-    <div id="testimonials" class="section">
-        <div class="background slider-carousel" style="background-image: url(assets/img/img_bg_main.jpg);">
-            <div class="container">
-                <div id="carouselTestimonials" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselTestimonials" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselTestimonials" data-slide-to="1"></li>
-                        <li data-target="#carouselTestimonials" data-slide-to="2"></li>
-                        <li data-target="#carouselTestimonials" data-slide-to="3"></li>
-                    </ol>
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active">
-                            <div class="row">
-                                <div class="col-md-10 col-sm-10 col-10 mr-auto ml-auto">
-                                    <p class="slider-carousel__title">Ida Almgren</p>
-                                    <p class="slider-carousel__caption">CFO Omnia</p>
-                                    <hr>
-                                    <p class="slider-carousel__description">
-                                        I had the pleasure of working with Muhammad at iZafe Group and Dosell, and I can confidently say that he excels in problem-solving, collaboration, and work ethic. Muhammad has a talent for tackling complex problems. His collaboration with the finance team has been exemplary. Muhammad fosters a cooperative environment and ensures everyone's input is valued, leading to more cohesive and efficient teamwork. Muhammad's problem-solving abilities, teamwork, and strong work ethic make him a great asset. I would definitely recommend him!
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-md-10 col-sm-10 col-10 mr-auto ml-auto">
-                                    <p class="slider-carousel__title">Pontus Olsson</p>
-                                    <p class="slider-carousel__caption">Head of Customer Success</p>
-                                    <hr>
-                                    <p class="slider-carousel__description">
-                                        I wholeheartedly recommend Mohammed. He's incredibly innovative, consistently generating creative solutions that drive projects forward. His productivity is remarkable; he takes ownership of tasks and delivers high-quality results within deadlines. Mohammed is not only skilled but also a friendly, cooperative colleague, fostering a positive work environment. His enthusiasm to learn is admirable; he's always eager to acquire new knowledge. Mohammed's blend of innovation, productivity, affability, and eagerness to learn makes him an invaluable asset to any team.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-md-10 col-sm-10 col-10 mr-auto ml-auto">
-                                    <p class="slider-carousel__title">Jojo Joseph</p>
-                                    <p class="slider-carousel__caption">Software Developer at Toyota Material Handling</p>
-                                    <hr>
-                                    <p class="slider-carousel__description">
-                                        Muhammad is very thorough in his work and extremely professional. He delivers on time and often with an innovative twist that makes the deliveries awesome. Muhammad is a positive and happy person with a lot of humor and laughter. In total I can recommend Muhammad as a team member who contributes great in a high performance team.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-md-10 col-sm-10 col-10 mr-auto ml-auto">
-                                    <p class="slider-carousel__title">Shahid Zaman</p>
-                                    <p class="slider-carousel__caption">Software Engineer | React JS | Next JS | Express | Node JS</p>
-                                    <hr>
-                                    <p class="slider-carousel__description">
-                                        Mohsin is a solid developer and he has a way with words. He can take any programming concepts and present to you in easy, concise and relatable words. He is extremely organized and reliable. Mohsin is someone who easily merges product thinking and his technical prowess to bring them together. I've seen him easily straddle several planes of thinking and complexity while being able to compartmentalize problems and bringing the effects of a solution systemwide. His solutions and innovation were commendable during his consociation with me. Clear thinker, Scalable coding and tangible! Comes highly recommended!
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#testimonials" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#testimonials" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                    <div class="slider-carousel__circle">
-                        <p><i class="fa fa-quote-right" aria-hidden="true"></i></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Testimonials-->
-
-
-
-    <!--Contact-->
-    <div class="background" style="background-image: url(assets/img/img_bg_main.jpg)">
-        <div id="contact" class="container section">
-            <div class="row">
-                <div class="col-md-12">
-                    <p id="contacts_header" class="section__title">Get in touch_</p>
-                </div>
-            </div>
-            <div class="row contacts">
-                <div class="col-md-5 col-lg-4">
-                    <div class="contacts__list">
-                        <dl class="contact-list">
-                            <dt>Phone:</dt>
-                            <dd><a href="tel:46764361487">+46764361487</a></dd>
-                            <dt>Skype:</dt>
-                            <dd><a href="skype:mohsin.sapra">mohsin.sapra</a></dd>
-                            <dt>Email:</dt>
-                            <dd><a href="mailto:mohsin.sapra@gmail.com.com">mohsin.sapra@gmail.com</a></dd>
-                        </dl>
-                    </div>
-                    <div class="contacts__social">
-                        <ul>
-                            <li>
-
-                                <a href="https://www.facebook.com/mohsinsapraa/" target="_blank">
-                                    Facebook
-                                </a>
-                            </li>
-                            <li><a href="https://www.linkedin.com/in/mohsinsapra/" target="_blank">Linkedin</a></li>
-                            <li><a href="https://www.github.com/mohsinsapra/" target="_blank">GitHub</a></li>
-                            <li><a href="https://www.tiktok.com/@mohsinsapraa" target="_blank">TikTok</a></li>
-
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-7 col-lg-5">
-                    <div class="contacts__form">
-                        <p class="contacts__form-title">Or just write me a letter here_</p>
+                    <div class="gs-reveal">
+                        <p class="contact__form-title">// or just write me a letter here_</p>
                         <form id="contact-form" action="https://formspree.io/f/mvgqwewy" method="POST">
                             <div class="form-group">
-                                <input class="form-field js-field-name" name="name" type="text" placeholder="Your name" required>
-                                <span class="form-validation"></span>
-                                <span class="form-invalid-icon"><i class="mdi mdi-close" aria-hidden="true"></i></span>
+                                <input class="form-field" name="name" type="text" placeholder="Your name" required>
                             </div>
                             <div class="form-group">
-                                <input class="form-field js-field-email" name="email" type="email" placeholder="Your e-mail"
-                                    required>
-                                <span class="form-validation"></span>
-                                <span class="form-invalid-icon"><i class="mdi mdi-close" aria-hidden="true"></i></span>
+                                <input class="form-field" name="email" type="email" placeholder="Your e-mail" required>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-field js-field-message" name="message" placeholder="Type the message here"
-                                    required></textarea>
-                                <span class="form-validation"></span>
-                                <span class="form-invalid-icon"><i class="mdi mdi-close" aria-hidden="true"></i></span>
+                                <textarea class="form-field" name="message" placeholder="Type the message here" required></textarea>
                             </div>
-                            <button id="contact-form-button" class="site-btn site-btn--form" type="submit">Send</button>
+                            <button class="btn" type="submit">Send message</button>
                             <p id="contact-form-status"></p>
                         </form>
                     </div>
-                    <div class="footer">
-                        <p>© 2025 Muhammad. All Rights Reserved</p>
-                    </div>
                 </div>
             </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="wrap">
+            <p>© <span id="year">2025</span> Muhammad. All Rights Reserved</p>
+            <p>built with <a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> + <a href="https://gsap.com" target="_blank" rel="noopener">gsap</a>_</p>
         </div>
-    </div>
-    <!--Contact-->
+    </footer>
 
+    <!-- ===== SCRIPTS ===== -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="assets/js/animations.js"></script>
 
-    <script src="assets/js/jquery-2.2.4.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/menu.js"></script>
-    <script src="assets/js/jquery.waypoints.js"></script>
-    <script src="assets/js/progress-list.js"></script>
-    <script src="assets/js/section.js"></script>
-    <script src="assets/js/portfolio-filter.js"></script>
-    <script src="assets/js/slider-carousel.js"></script>
-    <script src="assets/js/mobile-menu.js"></script>
-    <script src="assets/js/contacts.js"></script>
-    <script src="assets/js/mbclicker.min.js"></script>
-    <script src="assets/js/site-btn.js"></script>
-    <script src="assets/js/style-switcher.js"></script>
+    <script type="importmap">
+        { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+    </script>
+    <script type="module" src="assets/js/main.js"></script>
+
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 

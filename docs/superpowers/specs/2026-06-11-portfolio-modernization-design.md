@@ -56,3 +56,17 @@ re-colors on toggle.
 
 Serve locally, verify with Playwright: both themes, mobile (375px) + desktop (1440px),
 filter, slider, skill bars, form markup, zero console errors.
+
+## Revision (same day, user request)
+
+User asked for a from-scratch structure, not a section-by-section port. Final build:
+fixed full-page Three.js canvas reacting to scroll progress; Lenis smooth scrolling;
+scroll progress bar; oversized uppercase hero with line-mask intro; tech marquee;
+word-by-word scrub reveal of the intro paragraph; stat counters (5+ yrs, 22 ATMs,
+99.9% uptime, 80% OCR reduction) derived from existing content; sticky-stacking job
+cards; pinned horizontal project gallery on desktop ≥1024px (vertical cards below);
+GSAP testimonial slider; gradient mega-email contact. Portfolio filter buttons were
+replaced by per-card tag labels. All original content preserved.
+
+Bug found in testing: `transition: all`/`transition: transform` on GSAP-animated
+elements blocks tweens — hover lifts now use the separate `translate` property.
