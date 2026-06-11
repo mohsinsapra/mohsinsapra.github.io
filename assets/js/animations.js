@@ -7,12 +7,6 @@
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduced) {
     document.documentElement.classList.add("reduced-motion");
-    document.querySelectorAll(".skill__fill").forEach(function (el) {
-      el.style.width = el.dataset.value + "%";
-    });
-    document.querySelectorAll(".skill__value").forEach(function (el) {
-      el.textContent = el.dataset.value + "%";
-    });
     document.querySelectorAll(".stat__num").forEach(function (el) {
       el.textContent = el.dataset.count + (el.dataset.suffix || "");
     });
@@ -127,25 +121,18 @@
     });
   });
 
-  /* ---------- skill bars + counters ---------- */
-  gsap.utils.toArray(".skill__fill").forEach(function (el) {
-    gsap.to(el, {
-      width: el.dataset.value + "%",
-      duration: 1.2,
-      ease: "power2.out",
-      scrollTrigger: { trigger: el, start: "top 92%", once: true },
+  /* ---------- skills stack: row + chip reveals ---------- */
+  gsap.utils.toArray(".stack__row").forEach(function (row) {
+    var tl = gsap.timeline({
+      scrollTrigger: { trigger: row, start: "top 88%", once: true },
+      defaults: { ease: "power3.out" },
     });
-  });
-  gsap.utils.toArray(".skill__value").forEach(function (el) {
-    var target = parseInt(el.dataset.value, 10);
-    var obj = { v: 0 };
-    gsap.to(obj, {
-      v: target,
-      duration: 1.2,
-      ease: "power2.out",
-      scrollTrigger: { trigger: el, start: "top 92%", once: true },
-      onUpdate: function () { el.textContent = Math.round(obj.v) + "%"; },
-    });
+    tl.from(row, { opacity: 0, y: 36, duration: 0.7 })
+      .from(
+        row.querySelectorAll(".stack__chips li"),
+        { opacity: 0, y: 14, scale: 0.92, duration: 0.45, stagger: 0.045 },
+        "-=0.35"
+      );
   });
 
   /* ---------- projects: pinned horizontal scroll on desktop ---------- */
