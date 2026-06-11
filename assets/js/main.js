@@ -1,6 +1,6 @@
 // Site behavior: theme toggle, mobile menu, active nav link,
 // testimonial slider, contact form. Boots the Three.js background.
-import { initScene } from "./scene.js";
+import { initScene } from "./scene.js?v=2";
 
 /* ---------- Three.js background ---------- */
 let sceneApi = null;
@@ -112,6 +112,19 @@ if (form) {
     }
   });
 }
+
+/* ---------- job-card sticky offsets ----------
+   Cards taller than the viewport must park when their BOTTOM is visible,
+   not pin at a fixed top — otherwise the next card covers unread content. */
+function layoutJobStack() {
+  document.querySelectorAll(".job-card").forEach((card) => {
+    const top = Math.min(92, window.innerHeight - card.offsetHeight - 28);
+    card.style.setProperty("--stick-top", top + "px");
+  });
+}
+layoutJobStack();
+window.addEventListener("resize", layoutJobStack);
+window.addEventListener("load", () => setTimeout(layoutJobStack, 400));
 
 /* ---------- footer year ---------- */
 const year = document.getElementById("year");

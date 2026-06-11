@@ -432,11 +432,11 @@ main, .footer { position: relative; z-index: 2; }
 }
 .resume__label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
 
-/* sticky-stacking job cards */
+/* sticky-stacking job cards; JS sets per-card --stick-top from height */
 .job-stack { display: grid; gap: 28px; }
 .job-card {
   position: sticky;
-  top: 92px;
+  top: var(--stick-top, 92px);
   border: 1px solid var(--line);
   border-radius: 18px;
   background: var(--bg-card);
