@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free guides and checklists by Muhammad Mohsin (Mohsin Sapra) — documents for Pakistani students moving to Sweden.">
+    <meta name="author" content="Muhammad Mohsin">
+    <title>Documents — Muhammad Mohsin</title>
+
+    <script>
+        (function () {
+            document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
+        })();
+    </script>
+
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0d10;
+            --bg-card: #12181e;
+            --border: #202a32;
+            --text: #e8f0ea;
+            --text-dim: #93a39a;
+            --accent: #2fe98c;
+            --accent-soft: rgba(47, 233, 140, 0.12);
+        }
+        [data-theme="light"] {
+            --bg: #f4f1e9;
+            --bg-card: #faf8f2;
+            --border: #ddd8cc;
+            --text: #15211a;
+            --text-dim: #5c6a60;
+            --accent: #0c7c4a;
+            --accent-soft: rgba(12, 124, 74, 0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Satoshi", sans-serif;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+        nav {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        nav .wrap { display: flex; justify-content: space-between; align-items: center; }
+        .logo {
+            font-family: "Clash Display", sans-serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--text);
+            text-decoration: none;
+        }
+        .logo span { color: var(--accent); }
+        nav a.back { color: var(--text-dim); text-decoration: none; font-size: 0.95rem; }
+        nav a.back:hover { color: var(--accent); }
+        header.page { padding: 64px 0 32px; }
+        h1 {
+            font-family: "Clash Display", sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 600;
+        }
+        h1 em { color: var(--accent); font-style: normal; }
+        .page p { color: var(--text-dim); margin-top: 12px; max-width: 560px; }
+        .doc-list { padding: 16px 0 96px; display: grid; gap: 20px; }
+        .doc-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .doc-icon {
+            width: 56px; height: 56px; border-radius: 12px;
+            background: var(--accent-soft);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem;
+        }
+        .doc-info { flex: 1; min-width: 240px; }
+        .doc-info h2 { font-family: "Clash Display", sans-serif; font-size: 1.15rem; font-weight: 600; }
+        .doc-info p { color: var(--text-dim); font-size: 0.92rem; margin-top: 4px; }
+        .doc-meta { color: var(--text-dim); font-size: 0.8rem; margin-top: 8px; }
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: #06130c;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 999px;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+        .btn:hover { opacity: 0.88; }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="wrap">
+            <a class="logo" href="index.html">mohsin<span>.se_</span></a>
+            <a class="back" href="index.html">&larr; back to site</a>
+        </div>
+    </nav>
+
+    <header class="page">
+        <div class="wrap">
+            <h1>Documents <em>&amp;</em> Guides</h1>
+            <p>Free checklists and guides from my videos — made for Pakistani students and newcomers moving to Sweden. Download, print, and tick things off.</p>
+        </div>
+    </header>
+
+    <main class="wrap doc-list">
+        <article class="doc-card">
+            <div class="doc-icon">🧳</div>
+            <div class="doc-info">
+                <h2>Sweden Packing Checklist</h2>
+                <p>What to buy in Pakistan, what to skip, what people forget — the complete pre-departure packing checklist from the "Coming to Sweden" series.</p>
+                <div class="doc-meta">PDF · Updated July 2026 · English/Urdu</div>
+            </div>
+            <a class="btn" href="docs/downloads/sweden-packing-checklist-mohsin-sapra.pdf" download>Download PDF</a>
+        </article>
+    </main>
+</body>
+
+</html>
