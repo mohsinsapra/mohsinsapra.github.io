@@ -627,6 +627,14 @@ main, .footer { position: relative; z-index: 2; }
 }
 .pcard:hover .pcard__media img { transform: scale(1.06); }
 .pcard__media--embed { overflow-y: auto; padding: 8px 12px; }
+/* inline demo video card (CamBridge) */
+.pcard__media--video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #000;
+}
 /* featured app card: triple phone-screenshot strip */
 .pcard--featured { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), var(--shadow); }
 .pcard--featured .pcard__tag::before { content: "★ "; }
