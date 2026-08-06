@@ -807,6 +807,36 @@ main, .footer { position: relative; z-index: 2; }
 }
 .contact__social a:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
 
+/* booking CTA (Calendly) */
+.contact__booking { margin: 20px 0 56px; }
+.contact__booking-title {
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.contact__booking-desc {
+  max-width: 560px;
+  color: var(--text-dim);
+  font-size: 1.02rem;
+}
+.contact__booking-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.contact__booking-btns .btn { margin-top: 22px; text-decoration: none; }
+.btn--ghost {
+  background: transparent;
+  color: var(--accent);
+}
+@media (max-width: 560px) {
+  .contact__booking-btns .btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 14px;
+  }
+}
+
 .contact__form-title {
   font-family: var(--font-mono);
   font-size: 0.85rem;
