@@ -144,7 +144,7 @@
                     <span class="section__index">01 / intro</span>
                     <h2 class="section__title">Hi<em>_</em></h2>
                 </div>
-                <p class="scrub-text">Senior Full-Stack Engineer with 5+ years of experience building scalable applications across fintech, healthcare, and consumer technology sectors. Proven track record of leading technical initiatives, delivering high-impact solutions, and driving measurable business results. Expert in modern web technologies, cloud infrastructure, and AI integration with strong leadership skills in mentoring teams and managing complex projects. Passionate about transforming innovative ideas into production-ready solutions that solve real-world problems and create significant value for organizations and users alike.</p>
+                <p class="scrub-text">Senior Full-Stack Engineer with 5+ years of experience building scalable applications across fintech, healthcare, and consumer technology sectors. Calm and hands-on when things go wrong: when a DNSSEC change took almost 1,000 medicine dispensers offline, I brought every one of them back over SSH. Proven track record of leading technical initiatives, delivering high-impact solutions, and driving measurable business results. Expert in modern web technologies, cloud infrastructure, and AI integration with strong leadership skills in mentoring teams and managing complex projects. Passionate about transforming innovative ideas into production-ready solutions that solve real-world problems and create significant value for organizations and users alike.</p>
 
                 <div class="stats">
                     <div class="stat gs-reveal">
@@ -195,6 +195,8 @@
                         <details class="job-card__more">
                             <summary><span class="when-closed">show details</span><span class="when-open">hide details</span></summary>
                         <ul class="job-card__points">
+                        <li>On 11 October 2026 the internet's DNS root switched to a new DNSSEC key. Almost 1,000 of our medicine dispensers in patients' homes still trusted only the old key, lost DNS and went offline, putting patients' medication schedules at risk. Took charge of the incident and <strong>recovered the entire fleet remotely over SSH</strong>, updating every device within a very short time window.
+                            <span class="job-card__result">→ every device back online, patients kept getting their medicine on time and the company avoided a major outage</span></li>
                         <li>Manual photo review of dispenser alarms at ICE Malaga cost ~$1,000/month and took 10+ minutes per alarm as the device fleet scaled. Built a <strong>Django + Celery parallel OCR pipeline</strong> on AWS ECS with scheduled scaling, deployed entirely as Terraform/Terragrunt IaC.
                             <span class="job-card__result">→ ~680,000 alarms/year across 3,972 devices auto-resolved at 99.9% — 47 s per alarm (13× faster), ~$18,000/year saved</span></li>
                         <li>Care staff faced 10–15 second API responses on critical portal workflows. Introduced <strong>read-replica database routing</strong>, rewrote alarm queries, archived and indexed audit events, and removed hidden outbound API calls in the NestJS/DocumentDB backend.
