@@ -967,27 +967,6 @@ textarea.form-field { min-height: 120px; resize: vertical; }
 .consent-bar .consent-accept { background: var(--accent); color: #06130c; }
 .consent-bar .consent-decline { background: transparent; color: var(--text-dim); border: 1px solid rgba(147, 163, 154, 0.4); }
 
-/* ============ SHOWCASE: four featured projects right after the hero ============ */
-.showcase__grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
-}
-.showcase .pcard { width: auto; }
-.showcase .pcard__media { height: 300px; }
-.showcase .pcard__media img { object-position: top center; }
-.showcase .pcard__media--embed {
-  height: 300px;
-  display: flex;
-  justify-content: center;
-}
-.showcase .pcard__desc { -webkit-line-clamp: 7; }
-@media (max-width: 860px) {
-  .showcase__grid { grid-template-columns: minmax(0, 1fr); gap: 22px; }
-  .showcase .pcard__media,
-  .showcase .pcard__media--embed { height: 230px; }
-}
-
 /* ============ EXPERIENCE: details collapsed behind a toggle ============ */
 .job-card__more > summary {
   display: inline-flex;
@@ -1017,25 +996,7 @@ textarea.form-field { min-height: 120px; resize: vertical; }
 .job-card__more[open] .when-closed { display: none; }
 .job-card__more[open] .when-open { display: inline; }
 .job-card__more[open] > .job-card__points { margin-top: 16px; }
-/* fifth showcase card: full width, picture beside the text */
-.showcase .pcard--wide {
-  grid-column: 1 / -1;
-  flex-direction: row;
-}
-.showcase .pcard--wide .pcard__media {
-  flex: 0 0 50%;
-  height: auto;
-  min-height: 320px;
-  border-bottom: 0;
-  border-right: 1px solid var(--line);
-}
-@media (max-width: 860px) {
-  .showcase .pcard--wide { flex-direction: column; }
-  .showcase .pcard--wide .pcard__media {
-    flex: none;
-    height: 230px;
-    min-height: 0;
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-  }
-}
+
+/* Long descriptions: keep the clamp to six lines (a stretched flex item showed the hidden lines). */
+.pcard__desc { flex: none; }
+.pcard__stack { margin-top: auto; }
