@@ -44,7 +44,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/modern.css?v=2">
+    <link rel="stylesheet" href="assets/css/modern.css?v=3">
 </head>
 
 <body>
@@ -60,6 +60,7 @@
         <div class="wrap nav__inner">
             <a class="nav__logo" href="#top" data-scroll>mohsin<span>.se_</span></a>
             <div class="nav__links">
+                <a href="#featured" data-scroll>showcase</a>
                 <a href="#hello" data-scroll>hello</a>
                 <a href="#resume" data-scroll>resume</a>
                 <a href="#portfolio" data-scroll>work</a>
@@ -80,6 +81,7 @@
     <!-- ===== MOBILE MENU ===== -->
     <div class="mobile-menu">
         <button class="mobile-menu__close" aria-label="Close menu">✕</button>
+        <a href="#featured" data-scroll><span>00</span>showcase</a>
         <a href="#hello" data-scroll><span>01</span>hello</a>
         <a href="#resume" data-scroll><span>02</span>resume</a>
         <a href="#portfolio" data-scroll><span>03</span>work</a>
@@ -128,6 +130,81 @@
             </div>
             <span class="hero__scroll">SCROLL</span>
         </header>
+
+        <!-- ===== FEATURED: the four headline projects, right after the hero ===== -->
+        <section id="featured" class="section showcase">
+            <div class="wrap">
+                <div class="section__head">
+                    <span class="section__index">00 / featured work</span>
+                    <h2 class="section__title">Showcase<em>_</em></h2>
+                </div>
+                <div class="showcase__grid">
+
+                    <article class="pcard pcard--featured">
+                        <div class="pcard__media pcard__media--video">
+                            <video controls playsinline preload="none" poster="https://mohsin.se/cambridge/media/cambridge-demo-poster.jpg">
+                                <source src="https://mohsin.se/cambridge/media/cambridge-demo.mp4" type="video/mp4">
+                                Your browser doesn't support embedded video — <a href="https://mohsin.se/cambridge/media/cambridge-demo.mp4">watch the demo</a>.
+                            </video>
+                        </div>
+                        <div class="pcard__body">
+                            <span class="pcard__tag">iOS + macOS app</span>
+                            <h3 class="pcard__title">CamBridge</h3>
+                            <p class="pcard__desc">Turns an iPhone into a pro camera monitored and remote-controlled from a Mac or a second iPhone — built for creators who own an iPhone and a MacBook and don't want to buy a camera rig. Two native Swift apps with zero third-party dependencies talk over the local network with a custom wire protocol and hardware-encoded HEVC video. Full remote control of photo, video recording, lens switching, zoom, focus, and exposure, with both portrait and landscape monitoring.</p>
+                            <ul class="pcard__stack"><li>Swift</li><li>SwiftUI</li><li>AVFoundation</li><li>VideoToolbox</li><li>Network.framework</li><li>iOS + macOS</li></ul>
+                            <a href="https://mohsin.se/cambridge/" class="pcard__link" target="_blank" rel="noopener">View Project</a>
+                        </div>
+                    </article>
+
+                    <article class="pcard pcard--featured">
+                        <div class="pcard__media"><img src="assets/img/drivetest-site.jpg" alt="drivetest.se — pass your taxi and transport exams the first time" loading="lazy"></div>
+                        <div class="pcard__body">
+                            <span class="pcard__tag">website + mobile app</span>
+                            <h3 class="pcard__title">DriveTest.se</h3>
+                            <p class="pcard__desc">A study app and website for Swedish taxi, transport and driving licence theory tests: 1000+ official-style questions, an AI tutor that explains every answer, practice, custom and review modes, questions in many languages with text-to-speech, and progress per category. Android app, web app, and a bilingual (English/Swedish) website with exam guides and a free OB pay calculator for taxi drivers.</p>
+                            <ul class="pcard__stack"><li>Flutter</li><li>Django REST</li><li>Next.js</li><li>TypeScript</li><li>AI tutor</li><li>SEO</li></ul>
+                            <a href="https://drivetest.se/" class="pcard__link" target="_blank" rel="noopener">Visit drivetest.se</a>
+                        </div>
+                    </article>
+
+                    <article class="pcard pcard--featured">
+                        <div class="pcard__media"><img src="assets/img/driveinsweden-site.jpg" alt="driveinsweden.se — get an earlier driving test" loading="lazy"></div>
+                        <div class="pcard__body">
+                            <span class="pcard__tag">web app + SaaS</span>
+                            <h3 class="pcard__title">Drive in Sweden</h3>
+                            <p class="pcard__desc">Gets learner drivers an earlier driving test. It watches Trafikverket for free test times every five minutes, day and night, at up to four test centres, and alerts users by email and push the moment one opens. Users connect with BankID, then reserve and book the time in a few clicks. Bilingual site with SEO pages for every major Swedish city, Stripe payments.</p>
+                            <ul class="pcard__stack"><li>Cloudflare Workers</li><li>Hono</li><li>D1</li><li>Next.js</li><li>TypeScript</li><li>Stripe</li><li>BankID</li></ul>
+                            <a href="https://driveinsweden.se/" class="pcard__link" target="_blank" rel="noopener">Visit driveinsweden.se</a>
+                        </div>
+                    </article>
+
+                    <article class="pcard pcard--featured">
+                        <div class="pcard__media pcard__media--embed">
+                            <blockquote class="twitter-tweet" data-media-max-width="420"><p lang="es" dir="ltr">Convertir calderilla en <a href="https://twitter.com/hashtag/Bitcoin?src=hash&amp;ref_src=twsrc%5Etfw">#Bitcoin</a> y recibirlo vía <a href="https://twitter.com/hashtag/LightningNetwork?src=hash&amp;ref_src=twsrc%5Etfw">#LightningNetwork</a> gracias a los cajeros <a href="https://twitter.com/hashtag/ATMbitbit?src=hash&amp;ref_src=twsrc%5Etfw">#ATMbitbit</a><br><br>Visto en Madrid, España 🇪🇦 <a href="https://t.co/FRdtpCTQW9">pic.twitter.com/FRdtpCTQW9</a></p>&mdash; La Taberna de Bitcoin (@TabernaBitcoin) <a href="https://twitter.com/TabernaBitcoin/status/1573190100917407745?ref_src=twsrc%5Etfw">September 23, 2022</a></blockquote>
+                        </div>
+                        <div class="pcard__body">
+                            <span class="pcard__tag">hardware + payments</span>
+                            <h3 class="pcard__title">Bitcoin ATM (ATMbitbit)</h3>
+                            <p class="pcard__desc">A complete Bitcoin ATM product built end to end, fully remote: hardware integration for cash and debit cards, backend microservices on AWS SQS, the website, and Bitcoin mainnet and Lightning Network payouts. 22 ATMs deployed across Spain. The video shows one in Madrid turning small change into Bitcoin.</p>
+                            <ul class="pcard__stack"><li>Bitcoin</li><li>Lightning Network</li><li>Hardware Integration</li><li>Payment Processing</li><li>Blockchain</li></ul>
+                            <a href="https://x.com/TabernaBitcoin/status/1573190100917407745" class="pcard__link" target="_blank" rel="noopener">Watch on X</a>
+                        </div>
+                    </article>
+
+
+                    <article class="pcard pcard--featured pcard--wide">
+                        <div class="pcard__media"><img src="assets/img/jobflow-site.jpg" alt="jobflow — your whole job hunt, in one calm flow" loading="lazy"></div>
+                        <div class="pcard__body">
+                            <span class="pcard__tag">web app + browser extension</span>
+                            <h3 class="pcard__title">jobflow</h3>
+                            <p class="pcard__desc">The whole job hunt in one place. jobflow pulls Arbetsförmedlingen's open job ads every 15 minutes and gives each one a fit score against your profile. It tailors your CV for every ad from your master CV only, with safety checks that reject any invented fact, number or skill. Read-only Gmail tracking moves applications forward when employers reply, and a browser extension fills application forms, attaches the tailored CV and drafts a cover letter. Each user's data is isolated in the database itself.</p>
+                            <ul class="pcard__stack"><li>AI CV tailoring</li><li>Google Gemini</li><li>Gmail API</li><li>Browser extension</li><li>Job-matching</li><li>Privacy by design</li></ul>
+                            <a href="https://jobs.mohsin.se/" class="pcard__link" target="_blank" rel="noopener">Visit jobs.mohsin.se</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
         <!-- ===== TECH MARQUEE ===== -->
         <div class="marquee" aria-hidden="true">
@@ -192,6 +269,8 @@
                             </div>
                             <p class="job-card__date">Dec 2022 — Present</p>
                         </div>
+                        <details class="job-card__more">
+                            <summary><span class="when-closed">show details</span><span class="when-open">hide details</span></summary>
                         <ul class="job-card__points">
                         <li>Manual photo review of dispenser alarms at ICE Malaga cost ~$1,000/month and took 10+ minutes per alarm as the device fleet scaled. Built a <strong>Django + Celery parallel OCR pipeline</strong> on AWS ECS with scheduled scaling, deployed entirely as Terraform/Terragrunt IaC.
                             <span class="job-card__result">→ ~680,000 alarms/year across 3,972 devices auto-resolved at 99.9% — 47 s per alarm (13× faster), ~$18,000/year saved</span></li>
@@ -212,6 +291,7 @@
                         <li>Five junior developers needed structured growth and the team lacked shared engineering practices. <strong>Mentored</strong> them through code reviews, architecture guidance and workshops on React, Node.js and cloud deployment.
                             <span class="job-card__result">→ all mentees promoted within 12 months; code quality improved 50%</span></li>
                     </ul>
+                        </details>
                     </article>
 
                     <article class="job-card">
@@ -222,6 +302,8 @@
                             </div>
                             <p class="job-card__date">Apr 2020 — Nov 2022</p>
                         </div>
+                        <details class="job-card__more">
+                            <summary><span class="when-closed">show details</span><span class="when-open">hide details</span></summary>
                         <ul class="job-card__points">
                         <li>Spain had almost no accessible way to buy Bitcoin with cash. Architected a complete <strong>Bitcoin ATM solution</strong> fully remotely — hardware integration, AWS SQS microservices backend, frontend website, and Bitcoin mainnet/Lightning Network integration.
                             <span class="job-card__result">→ 22 ATMs deployed across Spain, processing secure cash and debit-card bitcoin purchases</span></li>
@@ -230,6 +312,7 @@
                         <li>Cross-border remittances were slow and expensive for users sending money to loved ones. Developed the <strong>Rembit crypto remittance service</strong> over Mastercard and Visa networks with secure KYC compliance endpoints, anti-money-laundering checks, and an S3-to-MySQL ETL pipeline using Athena with 24-hour automated processing.
                             <span class="job-card__result">→ €10,000+ in Bitcoin transfers within the first month of launch</span></li>
                     </ul>
+                        </details>
                     </article>
                 </div>
 
@@ -362,68 +445,16 @@
             <div class="projects-pin">
                 <div class="wrap projects-head">
                     <div>
-                        <span class="section__index">03 / selected work</span>
-                        <h2 class="section__title">My projects<em>_</em></h2>
+                        <span class="section__index">03 / more work</span>
+                        <h2 class="section__title">More projects<em>_</em></h2>
                     </div>
                     <p class="projects-hint mono">scroll →</p>
                 </div>
                 <div class="projects-track">
 
-                    <article class="pcard pcard--featured" data-tag="mobile apps">
-                        <div class="pcard__media pcard__media--video">
-                            <video controls playsinline preload="none" poster="https://mohsin.se/cambridge/media/cambridge-demo-poster.jpg">
-                                <source src="https://mohsin.se/cambridge/media/cambridge-demo.mp4" type="video/mp4">
-                                Your browser doesn't support embedded video — <a href="https://mohsin.se/cambridge/media/cambridge-demo.mp4">watch the demo</a>.
-                            </video>
-                        </div>
-                        <div class="pcard__body">
-                            <span class="pcard__tag">mobile apps — featured</span>
-                            <h3 class="pcard__title">CamBridge</h3>
-                            <p class="pcard__desc">Turns an iPhone into a pro camera monitored and remote-controlled from a Mac or a second iPhone — built for creators who own an iPhone and a MacBook and don't want to buy a camera rig. Two native Swift apps with zero third-party dependencies talk over the local network with a custom wire protocol and hardware-encoded HEVC video. Full remote control of photo, video recording, lens switching, zoom, focus, and exposure, with both portrait and landscape monitoring. Watch the demo above.</p>
-                            <ul class="pcard__stack"><li>Swift</li><li>SwiftUI</li><li>AVFoundation</li><li>VideoToolbox</li><li>Network.framework</li><li>iOS + macOS</li></ul>
-                            <a href="https://mohsin.se/cambridge/" class="pcard__link" target="_blank" rel="noopener">View Project</a>
-                        </div>
-                    </article>
-
-                    <article class="pcard pcard--featured" data-tag="mobile apps">
-                        <div class="pcard__media pcard__media--shots">
-                            <img src="assets/img/drivetest-1.png" alt="DriveTest app — all your driving exams in one app" loading="lazy">
-                            <img src="assets/img/drivetest-2.png" alt="DriveTest app — practice real exam questions" loading="lazy">
-                            <img src="assets/img/drivetest-3.png" alt="DriveTest app — see your score instantly" loading="lazy">
-                        </div>
-                        <div class="pcard__body">
-                            <span class="pcard__tag">mobile apps — featured</span>
-                            <h3 class="pcard__title">DriveTest</h3>
-                            <p class="pcard__desc">A comprehensive mobile application designed to help aspiring taxi drivers and taxi company operators prepare for their licensing examinations. Features interactive practice tests, detailed explanations, and progress tracking to ensure users are fully prepared for their certification exams. Built with Flutter for cross-platform mobile experience and Django REST framework for robust backend services.</p>
-                            <ul class="pcard__stack"><li>Flutter</li><li>Dart</li><li>Django</li><li>Python</li><li>REST API</li><li>Cross-platform Mobile</li></ul>
-                            <a href="https://mohsinsapra.github.io/drivetest-homepage/" class="pcard__link" target="_blank" rel="noopener">View Project</a>
-                        </div>
-                    </article>
 
 
-                    <article class="pcard" data-tag="mobile apps">
-                        <div class="pcard__media"><img src="assets/img/veg_shop.png" alt="Veg Shop Manager app" loading="lazy"></div>
-                        <div class="pcard__body">
-                            <span class="pcard__tag">mobile apps</span>
-                            <h3 class="pcard__title">Veg Shop Manager</h3>
-                            <p class="pcard__desc">A comprehensive Flutter mobile application designed for grocery store management in Spain. Features inventory management, sales tracking, customer management, and multi-language support. Built with modern Flutter architecture and designed for efficient grocery store operations.</p>
-                            <ul class="pcard__stack"><li>Flutter</li><li>Dart</li><li>Firebase</li><li>SQLite</li><li>Provider</li></ul>
-                            <a href="https://mohsinsapra.github.io/veg_shop_manager" class="pcard__link" target="_blank" rel="noopener">View Project</a>
-                        </div>
-                    </article>
 
-                    <article class="pcard" data-tag="web-sites">
-                        <div class="pcard__media pcard__media--embed">
-                            <blockquote class="twitter-tweet" data-media-max-width="420"><p lang="es" dir="ltr">Convertir calderilla en <a href="https://twitter.com/hashtag/Bitcoin?src=hash&amp;ref_src=twsrc%5Etfw">#Bitcoin</a> y recibirlo vía <a href="https://twitter.com/hashtag/LightningNetwork?src=hash&amp;ref_src=twsrc%5Etfw">#LightningNetwork</a> gracias a los cajeros <a href="https://twitter.com/hashtag/ATMbitbit?src=hash&amp;ref_src=twsrc%5Etfw">#ATMbitbit</a><br><br>Visto en Madrid, España 🇪🇦 <a href="https://t.co/FRdtpCTQW9">pic.twitter.com/FRdtpCTQW9</a></p>&mdash; La Taberna de Bitcoin (@TabernaBitcoin) <a href="https://twitter.com/TabernaBitcoin/status/1573190100917407745?ref_src=twsrc%5Etfw">September 23, 2022</a></blockquote>
-                        </div>
-                        <div class="pcard__body">
-                            <span class="pcard__tag">web-sites</span>
-                            <h3 class="pcard__title">Bitcoin ATM (ATMbitbit)</h3>
-                            <p class="pcard__desc">A revolutionary Bitcoin ATM solution that allows users to convert small change into Bitcoin and receive it via Lightning Network. Deployed across multiple locations in Spain. Convertir calderilla en #Bitcoin y recibirlo vía #LightningNetwork gracias a los cajeros #ATMbitbit. Visto en Madrid, España 🇪🇦.</p>
-                            <ul class="pcard__stack"><li>Bitcoin</li><li>Lightning Network</li><li>Hardware Integration</li><li>Payment Processing</li><li>Blockchain</li></ul>
-                            <a href="https://x.com/TabernaBitcoin/status/1573190100917407745" class="pcard__link" target="_blank" rel="noopener">View Project</a>
-                        </div>
-                    </article>
 
                     <article class="pcard" data-tag="mobile apps">
                         <div class="pcard__media"><img src="assets/img/kunjah_waly.png" alt="Home automation dashboard" loading="lazy"></div>
