@@ -997,14 +997,39 @@ textarea.form-field { min-height: 120px; resize: vertical; }
 .job-card__more[open] .when-open { display: inline; }
 .job-card__more[open] > .job-card__points { margin-top: 16px; }
 
-/* Long descriptions: keep the clamp to six lines (a stretched flex item showed the hidden lines). */
+/* ============ PROJECT CARDS: calmer look ============ */
+/* Long descriptions: keep the clamp (a stretched flex item showed the hidden lines). */
 .pcard__desc { flex: none; }
-.pcard__stack { margin-top: auto; }
+/* Featured cards: a quiet border like the rest; the star on the label marks them. */
+.pcard--featured { border-color: var(--line-strong); box-shadow: none; }
+.pcard:hover,
+.pcard--featured:hover { border-color: var(--accent); box-shadow: var(--shadow); }
+/* Screenshots sit in a rounded frame and show the top of each site. */
+.pcard__media:not(.pcard__media--video):not(.pcard__media--embed):not(.pcard__media--shots) {
+  padding: 14px 14px 0;
+}
+.pcard__media:not(.pcard__media--video):not(.pcard__media--embed):not(.pcard__media--shots) img {
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 -1px 0 var(--line), 0 10px 30px -12px rgba(0, 0, 0, 0.6);
+}
+/* website screenshots show the top of the page */
+.pcard__media img[src*="-site."] { object-position: top center; }
+.pcard:hover .pcard__media img { transform: scale(1.03); }
+/* Tags follow the text; the link sits in its own footer row. */
+.pcard__stack { margin-bottom: 0; }
+.pcard__link {
+  width: 100%;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.pcard__stack + .pcard__link { margin-top: auto; }
+.pcard__body > .pcard__stack { margin-bottom: 20px; }
 
-/* Desktop gallery: room at both ends so the first and last cards can rest in the centre. */
+/* Desktop gallery: the first card lines up under the heading; room at the
+   end lets the last cards rest in the centre. */
 @media (min-width: 1024px) {
   .projects-track {
-    padding-left: calc(50vw - min(440px, 84vw) / 2);
     padding-right: calc(50vw - min(440px, 84vw) / 2);
   }
 }
