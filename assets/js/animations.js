@@ -207,4 +207,23 @@
   window.addEventListener("load", function () {
     setTimeout(function () { ScrollTrigger.refresh(); }, 600);
   });
+
+  // When the page changes height after load (experience details opened or
+  // closed, the tweet embed growing), recalculate every scroll trigger so the
+  // pinned project gallery starts and ends in the right place.
+  var refreshTimer = null;
+  function refreshSoon() {
+    clearTimeout(refreshTimer);
+    refreshTimer = setTimeout(function () { ScrollTrigger.refresh(); }, 150);
+  }
+  document.querySelectorAll(".job-card__more").forEach(function (d) {
+    d.addEventListener("toggle", refreshSoon);
+  });
+  if (typeof ResizeObserver !== "undefined") {
+    var lastHeight = document.body.scrollHeight;
+    new ResizeObserver(function () {
+      var h = document.body.scrollHeight;
+      if (Math.abs(h - lastHeight) > 2) { lastHeight = h; refreshSoon(); }
+    }).observe(document.querySelector("main") || document.body);
+  }
 })();
