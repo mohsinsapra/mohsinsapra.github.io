@@ -1008,3 +1008,23 @@ textarea.form-field { min-height: 120px; resize: vertical; }
     padding-right: calc(50vw - min(440px, 84vw) / 2);
   }
 }
+
+/* Laptop screens: the pinned project gallery must fit the window height,
+   so the whole card stays visible while it scrolls sideways. */
+@media (min-width: 1024px) and (max-height: 920px) {
+  .projects-pin { padding: 84px 0 20px; }
+  .projects-head { margin-bottom: 18px; }
+  .projects-head .section__title { font-size: clamp(2.4rem, 8vh, 4.5rem); }
+  .projects-track .pcard__media { height: clamp(110px, 21vh, 200px); }
+  .projects-track .pcard__body { padding: 18px 22px 20px; }
+  .projects-track .pcard__tag { margin-bottom: 6px; }
+  .projects-track .pcard__title { margin-bottom: 6px; }
+  .projects-track .pcard__desc { -webkit-line-clamp: 4; margin-bottom: 12px; }
+  .projects-track .pcard__stack { margin-bottom: 12px; }
+}
+@media (min-width: 1024px) and (max-height: 740px) {
+  .projects-pin { padding-top: 76px; }
+  .projects-head .section__index { display: none; }
+  .projects-track .pcard__desc { -webkit-line-clamp: 3; }
+  .projects-track .pcard__stack li:nth-child(n + 5) { display: none; }
+}
