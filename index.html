@@ -197,8 +197,8 @@
                         <div class="pcard__body">
                             <span class="pcard__tag">web app + browser extension</span>
                             <h3 class="pcard__title">jobflow</h3>
-                            <p class="pcard__desc">The whole job hunt in one place. jobflow pulls Arbetsförmedlingen's open job ads every 15 minutes and gives each one a fit score against your profile. It tailors your CV for every ad from your master CV only, with safety checks that reject any invented fact, number or skill. Read-only Gmail tracking moves applications forward when employers reply, and a browser extension fills application forms, attaches the tailored CV and drafts a cover letter. Each user's data is isolated in the database itself.</p>
-                            <ul class="pcard__stack"><li>AI CV tailoring</li><li>Google Gemini</li><li>Gmail API</li><li>Browser extension</li><li>Job-matching</li><li>Privacy by design</li></ul>
+                            <p class="pcard__desc">The whole job hunt in one place. jobflow pulls Arbetsförmedlingen's open job ads (JobTech API) every 15 minutes and gives each one a fit score against your profile. It tailors your CV for every ad from your master CV only, with safety checks that reject any invented fact, number or skill. Read-only Gmail tracking moves applications forward when employers reply, and a browser extension fills application forms, attaches the tailored CV and drafts a cover letter. Each user's data is isolated by PostgreSQL row-level security, with a test that checks every table is covered. Self-hosted with Docker on Coolify.</p>
+                            <ul class="pcard__stack"><li>Django</li><li>Celery</li><li>PostgreSQL RLS</li><li>Redis</li><li>Gemini 2.5 Flash</li><li>Gmail API</li><li>Chrome extension (MV3)</li><li>Docker + Coolify</li></ul>
                             <a href="https://jobs.mohsin.se/" class="pcard__link" target="_blank" rel="noopener">Visit jobs.mohsin.se</a>
                         </div>
                     </article>
