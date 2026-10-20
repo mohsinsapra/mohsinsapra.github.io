@@ -143,7 +143,23 @@
     if (!track || !pin) return;
 
     function distance() {
-      return Math.max(0, track.scrollWidth - window.innerWidth + window.innerWidth * 0.06);
+      return Math.max(0, track.scrollWidth - window.innerWidth);
+    }
+
+    // Where the gallery should come to rest: each card centred on screen,
+    // plus the very start and end so you can scroll on past the section.
+    function snapPoints() {
+      var d = distance();
+      if (!d) return [0, 1];
+      var shift = gsap.getProperty(track, "x");
+      var points = [0, 1];
+      track.querySelectorAll(".pcard").forEach(function (card) {
+        var r = card.getBoundingClientRect();
+        var centreAtStart = r.left + r.width / 2 - shift;
+        var x = centreAtStart - window.innerWidth / 2;
+        points.push(Math.min(1, Math.max(0, x / d)));
+      });
+      return points;
     }
 
     gsap.to(track, {
@@ -157,6 +173,18 @@
         scrub: 1,
         invalidateOnRefresh: true,
         anticipatePin: 1,
+        snap: {
+          snapTo: function (value) {
+            var best = 0;
+            snapPoints().forEach(function (p) {
+              if (Math.abs(p - value) < Math.abs(best - value)) best = p;
+            });
+            return best;
+          },
+          duration: { min: 0.25, max: 0.7 },
+          delay: 0.08,
+          ease: "power2.inOut",
+        },
       },
     });
 
