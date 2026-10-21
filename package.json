@@ -8,7 +8,7 @@
     "gulp-cssnano": "^2.1.2",
     "gulp-notify": "^3.0.0",
     "gulp-plumber": "^1.1.0",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^6.0.1",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-watch": "^4.3.11",
     "run-sequence": "^2.1.0"
