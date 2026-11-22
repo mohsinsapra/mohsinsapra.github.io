@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to delete multiple apps on iPhone at once (what actually works)</title>
+<meta name="description" content="Can you delete many iPhone apps at once? What works on the phone, what needs a computer, Delete vs Offload, and which desktop tool to pick.">
+<meta name="author" content="Muhammad Mohsin">
+<link rel="canonical" href="https://mohsin.se/blog/delete-multiple-apps-iphone-at-once.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="mohsin.se">
+<meta property="og:title" content="How to delete multiple apps on iPhone at once (what actually works)">
+<meta property="og:description" content="Can you delete many iPhone apps at once? What works on the phone, what needs a computer, Delete vs Offload, and which desktop tool to pick.">
+<meta property="og:url" content="https://mohsin.se/blog/delete-multiple-apps-iphone-at-once.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How to delete multiple apps on iPhone at once (what actually works)">
+<meta name="twitter:description" content="Can you delete many iPhone apps at once? What works on the phone, what needs a computer, Delete vs Offload, and which desktop tool to pick.">
+<script>(function(){try{document.documentElement.dataset.theme=localStorage.getItem("theme")||"dark"}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SX8ZSEPPXB"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('consent', 'default', {'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500});
+gtag('js', new Date());
+gtag('config', 'G-SX8ZSEPPXB');
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to delete multiple apps on iPhone at once (what actually works)", "description": "Can you delete many iPhone apps at once? What works on the phone, what needs a computer, Delete vs Offload, and which desktop tool to pick.", "author": {"@type": "Person", "name": "Muhammad Mohsin", "url": "https://mohsin.se/"}, "publisher": {"@type": "Person", "name": "Muhammad Mohsin"}, "datePublished": "2026-11-22", "dateModified": "2026-11-22", "mainEntityOfPage": "https://mohsin.se/blog/delete-multiple-apps-iphone-at-once.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "mohsin.se", "item": "https://mohsin.se/"}, {"@type": "ListItem", "position": 2, "name": "AppSweep", "item": "https://mohsin.se/tools/appsweep/"}, {"@type": "ListItem", "position": 3, "name": "How to delete multiple apps on iPhone at once (what actually works)", "item": "https://mohsin.se/blog/delete-multiple-apps-iphone-at-once.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can you delete multiple apps on iPhone at once?", "acceptedAnswer": {"@type": "Answer", "text": "On the phone itself, deleting is done one app at a time. In Apple's guide for removing apps there is no multi-select step (checked in Apple's iOS 18 guide). To remove many apps in one go you need a desktop tool that talks to the iPhone over USB."}}, {"@type": "Question", "name": "What is the fastest way to delete apps on the iPhone itself?", "acceptedAnswer": {"@type": "Answer", "text": "Home Screen jiggle mode, App Library or Settings > General > iPhone Storage all work, but each removes one app per confirmation. None is a bulk action."}}, {"@type": "Question", "name": "Can I delete apps from my iPhone using a computer?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Desktop tools such as iMazing, 3uTools and AppSweep can list the apps on a connected iPhone and uninstall the ones you pick. The phone must be unlocked and trusted."}}, {"@type": "Question", "name": "What is the difference between Delete and Offload?", "acceptedAnswer": {"@type": "Answer", "text": "Deleting removes the app, and Apple notes that this can also remove its related data. Offloading frees the storage used by the app but keeps its documents and data."}}, {"@type": "Question", "name": "Why can't I delete an app on my iPhone?", "acceptedAnswer": {"@type": "Answer", "text": "The usual causes are a Screen Time restriction or a phone managed by a school or employer. Check your Screen Time settings first, or ask whoever manages the device."}}, {"@type": "Question", "name": "Can I delete built-in Apple apps?", "acceptedAnswer": {"@type": "Answer", "text": "Some can be removed and some cannot. If touching and holding the app shows no remove option, that app is part of iOS."}}, {"@type": "Question", "name": "How do I get back an app I deleted?", "acceptedAnswer": {"@type": "Answer", "text": "Search for it in the App Store and download it again, as long as it is still available there. Apple's guide confirms removed apps can be redownloaded."}}, {"@type": "Question", "name": "Do I need to jailbreak to delete apps from a computer?", "acceptedAnswer": {"@type": "Answer", "text": "No. Desktop tools use the same USB connection other tools use to manage the phone. The iPhone has to be connected, unlocked and set to trust the computer."}}]}</script>
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0d10;--bg-card:#12181e;--border:#202a32;--text:#e8f0ea;--text-dim:#93a39a;--accent:#2fe98c;--accent-soft:rgba(47,233,140,.12)}
+[data-theme="light"]{--bg:#f4f1e9;--bg-card:#faf8f2;--border:#ddd8cc;--text:#15211a;--text-dim:#5c6a60;--accent:#0c7c4a;--accent-soft:rgba(12,124,74,.1)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:"Satoshi",sans-serif;min-height:100vh;line-height:1.7;font-size:1.05rem}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+nav{padding:18px 0;border-bottom:1px solid var(--border)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font-family:"Clash Display",sans-serif;font-weight:600;font-size:1.2rem;color:var(--text);text-decoration:none}
+.logo span{color:var(--accent)}
+.navr{display:flex;gap:14px;align-items:center}
+.navr a{color:var(--text-dim);text-decoration:none;font-size:.95rem}
+.navr a:hover{color:var(--accent)}
+#theme-toggle{background:var(--bg-card);color:var(--text);border:1px solid var(--border);border-radius:999px;padding:6px 14px;cursor:pointer;font:inherit;font-size:.85rem}
+.crumbs{padding:22px 0 0;font-size:.88rem;color:var(--text-dim)}
+.crumbs a{color:var(--text-dim)}
+.crumbs a:hover{color:var(--accent)}
+header.page{padding:20px 0 8px}
+h1{font-family:"Clash Display",sans-serif;font-size:clamp(1.9rem,5vw,2.7rem);font-weight:600;line-height:1.15}
+.meta{color:var(--text-dim);font-size:.9rem;margin-top:12px}
+h2{font-family:"Clash Display",sans-serif;font-size:1.5rem;font-weight:600;margin:42px 0 10px;line-height:1.25}
+h3{font-family:"Clash Display",sans-serif;font-size:1.15rem;font-weight:600;margin:28px 0 8px}
+p,ul,ol{margin:12px 0}
+ul,ol{padding-left:1.3rem}
+li{margin:6px 0}
+a{color:var(--accent)}
+.answer{background:var(--accent-soft);border-left:3px solid var(--accent);padding:12px 16px;border-radius:0 10px 10px 0;margin:10px 0 14px}
+.note{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin:20px 0;font-size:.95rem}
+.cta{background:var(--bg-card);border:1px solid var(--accent);border-radius:16px;padding:22px 24px;margin:36px 0}
+.cta h2{margin:0 0 8px;font-size:1.25rem}
+.cta pre{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:12px 14px;overflow-x:auto;margin:12px 0;font-size:.92rem}
+.btn{display:inline-block;background:var(--accent);color:#06130c;font-weight:700;text-decoration:none;padding:11px 20px;border-radius:999px;font-size:.95rem;margin:4px 8px 4px 0}
+.btn.alt{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.tablewrap{overflow-x:auto;margin:18px 0;border:1px solid var(--border);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:.93rem}
+caption{text-align:left;padding:12px 14px;color:var(--text-dim);font-size:.88rem}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-top:1px solid var(--border)}
+thead th{background:var(--bg-card);border-top:0}
+tbody th{font-weight:700;background:var(--bg-card)}
+.related{display:grid;gap:10px;margin-top:10px}
+.related a{display:block;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;text-decoration:none;color:var(--text)}
+.related a:hover{border-color:var(--accent)}
+footer{border-top:1px solid var(--border);margin-top:56px;padding:26px 0 40px;text-align:center;color:var(--text-dim);font-size:.85rem}
+footer a{color:var(--text-dim)}
+code{background:var(--bg-card);border:1px solid var(--border);border-radius:6px;padding:1px 6px;font-size:.9em}
+.consent-bar{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:560px;margin:0 auto;background:var(--bg-card);color:var(--text);border:1px solid rgba(147,163,154,.3);border-radius:14px;padding:16px 18px;box-shadow:0 8px 30px rgba(0,0,0,.35);display:flex;gap:16px;align-items:center;flex-wrap:wrap;font-size:.88rem}
+.consent-bar p{margin:0;flex:1;min-width:220px;color:var(--text-dim)}
+.consent-bar__actions{display:flex;gap:10px}
+.consent-bar button{border:0;border-radius:999px;padding:9px 18px;cursor:pointer;font-weight:700;font-size:.85rem;font-family:inherit}
+.consent-bar .consent-accept{background:var(--accent);color:#06130c}
+.consent-bar .consent-decline{background:transparent;color:var(--text-dim);border:1px solid rgba(147,163,154,.4)}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<a class="logo" href="/">mohsin<span>.se_</span></a>
+<div class="navr"><a href="/tools/appsweep/">AppSweep</a><button id="theme-toggle" type="button" aria-label="Switch between dark and light theme">Theme</button></div>
+</div></nav>
+<main class="wrap">
+<p class="crumbs"><a href="/">mohsin.se</a> &rsaquo; <a href="/tools/appsweep/">AppSweep</a> &rsaquo; Guide</p>
+<header class="page">
+<h1>How to delete multiple apps on iPhone at once (what actually works)</h1>
+<p class="meta">By Muhammad Mohsin, maker of AppSweep. Published 22 November 2026.</p>
+</header>
+<article>
+
+<p>If you want to clear out fifty apps, the iPhone makes you do it fifty times. This guide answers the questions people actually ask about deleting many apps, shows what works on the phone itself, and then compares the desktop tools that can do it in one go. I make one of them (AppSweep), so I say where the others are the better choice.</p>
+<div class="note"><strong>Quick answer:</strong> on the iPhone you delete one app at a time. To remove many at once, connect the phone to a computer and use a tool that lets you tick several apps. See <a href="#which">which one to use</a>.</div>
+
+<h2>Can you delete multiple apps on iPhone at once?</h2>
+<p class="answer">On the phone, no: deleting is done one app at a time. In Apple's guide for removing apps there is no multi-select step (checked in Apple's iOS 18 guide).</p>
+<p>The steps Apple documents are per app: touch and hold the app on the Home Screen and choose Remove App, or touch and hold it in the App Library and choose Delete App. You can read them in <a href="https://support.apple.com/guide/iphone/remove-or-delete-apps-iph248b543ca/18.0/ios/18.0" rel="noopener">Apple's iPhone User Guide, Remove or delete apps</a>. Your iOS version may look slightly different, so if you see a bulk option on your phone, use it.</p>
+
+<h2>What is the fastest native way to delete apps?</h2>
+<p class="answer">All three built-in routes are one app per confirmation. Pick the one that matches how you find the apps.</p>
+<h3>Home Screen (jiggle mode)</h3>
+<p>Touch and hold an app, choose Remove App, then Delete App. Apple also offers Remove from Home Screen, which keeps the app in your App Library. This is fine for a handful of apps you can see.</p>
+<h3>App Library</h3>
+<p>Swipe past your last Home Screen page, touch and hold an app, and choose Delete App, then confirm. The App Library groups apps by category, which helps when you cannot remember where something lives.</p>
+<h3>Settings &gt; General &gt; iPhone Storage</h3>
+<p>This list shows how much space each app takes, so it is the best place to find large apps. Open an app in the list and its page offers to offload or delete it. Apple describes the storage screen in <a href="https://support.apple.com/108429" rel="noopener">How to check the storage on your iPhone and iPad</a>. It is still one app at a time.</p>
+
+<h2>Can I delete apps from a computer?</h2>
+<p class="answer">Yes. Desktop tools can list the apps on a connected iPhone and uninstall the ones you select, including several at a time. The phone has to be connected by USB, unlocked and trusted.</p>
+<p>The tools differ in price, platform and how much else they do. I compare them in the <a href="#desktop-tools">next section</a>, and in more detail in <a href="/blog/appsweep-vs-imazing-vs-apple-configurator.html">AppSweep vs iMazing vs 3uTools vs Apple Configurator</a>.</p>
+
+<h2>What is the difference between Delete and Offload?</h2>
+<p class="answer">Delete removes the app. Offload frees the storage used by the app but keeps its documents and data.</p>
+<p>That second sentence is Apple's own wording on its <a href="https://support.apple.com/108429" rel="noopener">iPhone storage page</a>. Offload is the safer choice for an app you might want back with your progress intact. Delete is the right choice when you are sure. Apple notes that removing an app can also remove its related user data, so back up anything you need first. AppSweep removes apps through the same iOS installation service, so treat its removals the same way.</p>
+
+<h2>Why can't I delete an app on my iPhone?</h2>
+<p class="answer">Usually because of a Screen Time restriction, or because the phone is managed by a school or employer.</p>
+<ul>
+<li><strong>Screen Time:</strong> a restriction can block deleting apps. Look in your Screen Time settings under content and privacy restrictions.</li>
+<li><strong>Managed device:</strong> an organisation can block removal of the apps it installed. Only the administrator can change that.</li>
+<li><strong>Built-in app:</strong> some Apple apps are part of iOS and have no remove option.</li>
+</ul>
+<p>A desktop tool does not bypass these rules. If the phone refuses, the tool will fail too.</p>
+
+<h2>Can I delete built-in Apple apps?</h2>
+<p class="answer">Some, not all. If touching and holding an app shows no remove option, it is part of iOS.</p>
+<p>For the ones that can be removed, you can get them back from the App Store. I would not rely on a desktop tool to remove system apps, and AppSweep is built for the apps you installed yourself.</p>
+
+<h2>How do I get back an app I deleted?</h2>
+<p class="answer">Search for it in the App Store and download it again, if it is still available there.</p>
+<p>Apple's guide confirms that removed apps can be redownloaded. Your purchases stay tied to your Apple Account. Data stored only inside the app may not come back, which is why a backup matters before a big clean-up.</p>
+
+<h2>Do I need to jailbreak to delete apps from a computer?</h2>
+<p class="answer">No. Desktop tools use the same USB service that other iPhone management tools use. The phone must be unlocked and must trust the computer.</p>
+<p>AppSweep works this way. When you connect the phone, iOS asks whether to trust the computer, and you need to say yes and enter your passcode. Nothing about the phone is modified.</p>
+
+<h2 id="desktop-tools">Desktop tools that can remove many apps</h2>
+<h3>iMazing</h3>
+<p>iMazing is a large iPhone manager for Mac and Windows. Its <a href="https://imazing.com/guides/how-to-delete-apps-on-iphone" rel="noopener">guide to deleting apps</a> says to select one or more apps from the list and click Uninstall. It also does backups, transfers and much more. Licensing is subscription-based, see their site for details.</p>
+<h3>3uTools</h3>
+<p>3uTools has downloads for Windows, macOS and Linux, and its site says it is free for all users. Its <a href="https://www.3u.com/tutorial/articles/4514/4-ways-to-uninstall-ios-apps-on-your-iphone-or-ipad" rel="noopener">official tutorial</a> says to select the apps you want to delete and click Uninstall. It is a broad toolbox, not only an app remover.</p>
+<h3>AppSweep</h3>
+<p>AppSweep is my free Mac tool with one job. It lists the apps on your iPhone by name, lets you filter by App Store category, shows sizes, lets you tick many apps and uninstall them together. A Keep star marks apps that must never be removed. Install it with <code>brew install mohsinsapra/tools/appsweep</code> and read the <a href="/tools/appsweep/how-to.html">how-to</a>.</p>
+
+<h2 id="which">Which should you use?</h2>
+<ul>
+<li><strong>You only want to clear out apps, on a Mac:</strong> AppSweep. It is free and does just that.</li>
+<li><strong>You also want backups, file transfer or messages export:</strong> iMazing. It does far more than remove apps.</li>
+<li><strong>You are on Windows or Linux, or want a free all-in-one:</strong> 3uTools has builds for those systems.</li>
+<li><strong>Only a few apps to remove:</strong> skip all of this and use the Home Screen.</li>
+</ul>
+<p>If you want to find the right apps to remove first, read <a href="/blog/find-iphone-apps-you-never-use.html">How to find iPhone apps you never use and remove them in bulk</a>.</p>
+
+<aside class="cta" aria-label="Get AppSweep">
+<h2>Try AppSweep, free for Mac</h2>
+<p>Remove many iPhone apps at once from your Mac over USB. Install it with Homebrew:</p>
+<pre><code>brew install mohsinsapra/tools/appsweep</code></pre>
+<a class="btn" href="/tools/appsweep/">AppSweep product page</a><a class="btn alt" href="/tools/appsweep/how-to.html">How to use it</a>
+</aside>
+<section aria-labelledby="more"><h2 id="more">Related guides</h2><div class="related"><a href="/blog/appsweep-vs-imazing-vs-apple-configurator.html">AppSweep vs iMazing vs 3uTools vs Apple Configurator</a><a href="/blog/find-iphone-apps-you-never-use.html">How to find iPhone apps you never use and remove them in bulk</a></div></section>
+</article>
+</main>
+<footer><div class="wrap"><p>&copy; <span id="year">2026</span> Muhammad Mohsin. <a href="/">mohsin.se</a> &middot; <a href="/privacy/tools.html">Privacy</a></p></div></footer>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+document.getElementById('theme-toggle').addEventListener('click',function(){var d=document.documentElement,n=d.dataset.theme==='dark'?'light':'dark';d.dataset.theme=n;try{localStorage.setItem('theme',n)}catch(e){}});
+</script>
+<script src="/assets/js/consent.js" defer></script>
+</body>
+</html>

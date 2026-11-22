@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to use AppSweep — step by step and troubleshooting</title>
+    <meta name="description" content="Step-by-step guide to removing many iPhone apps at once with AppSweep on a Mac, plus fixes if your iPhone is not found or an app will not remove.">
+    <meta name="author" content="Muhammad Mohsin">
+    <link rel="canonical" href="https://mohsin.se/tools/appsweep/how-to.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="mohsin.se">
+    <meta property="og:title" content="How to use AppSweep — step by step and troubleshooting">
+    <meta property="og:description" content="Step-by-step guide to removing many iPhone apps at once with AppSweep on a Mac, plus fixes if your iPhone is not found or an app will not remove.">
+    <meta property="og:url" content="https://mohsin.se/tools/appsweep/how-to.html">
+    <meta property="og:image" content="https://mohsin.se/assets/img/appsweep-icon.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="How to use AppSweep — step by step and troubleshooting">
+    <meta name="twitter:description" content="Step-by-step guide to removing many iPhone apps at once with AppSweep on a Mac, plus fixes if your iPhone is not found or an app will not remove.">
+
+    <script>
+        (function () {
+            var t = "dark";
+            try { t = localStorage.getItem("theme") || "dark"; } catch (e) {}
+            document.documentElement.dataset.theme = t;
+        })();
+    </script>
+
+    <!-- Google tag (gtag.js) with Consent Mode v2 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SX8ZSEPPXB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied',
+            'wait_for_update': 500
+        });
+        gtag('js', new Date());
+        gtag('config', 'G-SX8ZSEPPXB');
+    </script>
+
+    <link rel="icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to remove many iPhone apps at once with AppSweep",
+        "step": [
+            { "@type": "HowToStep", "name": "Install AppSweep", "text": "Run brew install mohsinsapra/tools/appsweep in Terminal." },
+            { "@type": "HowToStep", "name": "Connect your iPhone", "text": "Plug in your iPhone with a USB cable, unlock it and tap Trust." },
+            { "@type": "HowToStep", "name": "Start AppSweep", "text": "Run appsweep in Terminal." },
+            { "@type": "HowToStep", "name": "Tick the apps", "text": "Tick every app you want to remove." },
+            { "@type": "HowToStep", "name": "Press Uninstall", "text": "Press Uninstall. The ticked apps are removed from the iPhone." }
+        ]
+    }
+    </script>
+    <style>
+        :root{--bg:#0a0d10;--bg-card:#12181e;--border:#202a32;--text:#e8f0ea;--text-dim:#93a39a;--accent:#2fe98c;--accent-soft:rgba(47,233,140,.12);--on-accent:#06130c;--code:#0d1318}
+        [data-theme="light"]{--bg:#f4f1e9;--bg-card:#faf8f2;--border:#ddd8cc;--text:#15211a;--text-dim:#5c6a60;--accent:#0c7c4a;--accent-soft:rgba(12,124,74,.1);--on-accent:#ffffff;--code:#ece8dc}
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{background:var(--bg);color:var(--text);font-family:"Satoshi",system-ui,sans-serif;min-height:100vh;line-height:1.65}
+        a{color:var(--accent)}
+        a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+        .skip{position:absolute;left:-9999px;top:8px;background:var(--accent);color:var(--on-accent);padding:8px 14px;border-radius:8px;z-index:10000}
+        .skip:focus{left:8px}
+        .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+        nav.top{padding:20px 0;border-bottom:1px solid var(--border)}
+        nav.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px}
+        .logo{font-family:"Clash Display",sans-serif;font-weight:600;font-size:1.2rem;color:var(--text);text-decoration:none}
+        .logo span{color:var(--accent)}
+        .navr{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+        .navr a{color:var(--text-dim);text-decoration:none;font-size:.95rem}
+        .navr a:hover,.navr a[aria-current]{color:var(--accent)}
+        .theme-toggle{background:var(--bg-card);border:1px solid var(--border);color:var(--text);width:38px;height:38px;border-radius:50%;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:1rem}
+        .crumbs{padding:20px 0 0;font-size:.85rem;color:var(--text-dim)}
+        .crumbs a{color:var(--text-dim);text-decoration:none}.crumbs a:hover{color:var(--accent)}
+        header.page{padding:40px 0 24px}
+        h1{font-family:"Clash Display",sans-serif;font-size:clamp(2rem,5vw,3rem);font-weight:600;line-height:1.15}
+        h1 em{color:var(--accent);font-style:normal}
+        h2{font-family:"Clash Display",sans-serif;font-size:1.5rem;font-weight:600;margin:48px 0 14px;line-height:1.25}
+        h3{font-family:"Clash Display",sans-serif;font-size:1.1rem;font-weight:600;margin:24px 0 8px}
+        p{margin-top:12px}
+        .lead{color:var(--text-dim);max-width:620px;font-size:1.08rem}
+        .dim{color:var(--text-dim)}
+        ul.list,ol.list{margin:12px 0 0 22px;color:var(--text-dim)}
+        ul.list li,ol.list li{margin-top:6px}
+        ul.list strong,ol.list strong{color:var(--text)}
+        code,kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;background:var(--code);border:1px solid var(--border);border-radius:6px;padding:1px 6px}
+        pre{background:var(--code);border:1px solid var(--border);border-radius:12px;padding:14px 16px;overflow-x:auto;margin-top:12px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9rem;line-height:1.5}
+        pre code{background:none;border:0;padding:0}
+        .btn{display:inline-block;background:var(--accent);color:var(--on-accent);font-weight:700;text-decoration:none;padding:12px 22px;border-radius:999px;font-size:.95rem;border:0;cursor:pointer;font-family:inherit}
+        .btn:hover{opacity:.88}
+        .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
+        .btn.ghost:hover{border-color:var(--accent);color:var(--accent);opacity:1}
+        .card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:26px}
+        .tool-list{display:grid;gap:20px;padding:8px 0 24px}
+        .tool-card{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+        .tool-card img{width:84px;height:84px;border-radius:20px;flex:none}
+        .tool-info{flex:1;min-width:240px}
+        .tool-info h2{margin:0;font-size:1.25rem}
+        .tool-info p{color:var(--text-dim);font-size:.95rem;margin-top:6px}
+        .tool-meta{color:var(--text-dim);font-size:.8rem;margin-top:8px}
+        .hero{display:flex;gap:28px;align-items:center;flex-wrap:wrap;padding:40px 0 8px}
+        .hero img{width:128px;height:128px;border-radius:30px;box-shadow:0 10px 40px rgba(0,0,0,.35)}
+        .hero .txt{flex:1;min-width:260px}
+        .hero .tag{color:var(--accent);font-size:.9rem;font-weight:700;letter-spacing:.02em}
+        .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+        .install{margin-top:28px}
+        .install .row{display:flex;gap:10px;align-items:stretch;flex-wrap:wrap;margin-top:10px}
+        .install pre{flex:1;min-width:220px;margin:0;display:flex;align-items:center}
+        .install .copy{padding:10px 18px}
+        .note{border-left:3px solid var(--accent);background:var(--accent-soft);padding:12px 16px;border-radius:0 12px 12px 0;margin-top:16px;font-size:.93rem}
+        .steps{counter-reset:s;display:grid;gap:14px;margin-top:16px;list-style:none}
+        .steps li{counter-increment:s;display:flex;gap:16px;align-items:flex-start}
+        .steps li::before{content:counter(s);flex:none;width:34px;height:34px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;display:flex;align-items:center;justify-content:center;font-family:"Clash Display",sans-serif}
+        .steps b{display:block}
+        .steps span{color:var(--text-dim)}
+        details{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:14px 18px;margin-top:10px}
+        summary{cursor:pointer;font-weight:700}
+        details p{color:var(--text-dim);margin-top:8px}
+        form.sub{display:grid;gap:12px;margin-top:14px}
+        form.sub input[type=email]{width:100%;background:var(--code);color:var(--text);border:1px solid var(--border);border-radius:999px;padding:12px 18px;font:inherit}
+        form.sub label.consent{display:flex;gap:10px;align-items:flex-start;color:var(--text-dim);font-size:.9rem}
+        form.sub label.consent input{margin-top:5px;accent-color:var(--accent);flex:none}
+        .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+        .msg{min-height:1.4em;font-size:.93rem}
+        .msg.ok{color:var(--accent)}.msg.err{color:#ff7a7a}
+        [data-theme="light"] .msg.err{color:#b3261e}
+        .links li{margin-top:8px}
+        footer.footer{border-top:1px solid var(--border);margin-top:72px;padding:28px 0 40px;text-align:center;color:var(--text-dim);font-size:.85rem}
+        footer.footer p{margin:6px 0}
+        footer.footer a{color:var(--text-dim);text-decoration:none;margin:0 8px}
+        footer.footer a:hover{color:var(--accent)}
+        .consent-bar{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:560px;margin:0 auto;background:var(--bg-card);color:var(--text);border:1px solid rgba(147,163,154,.3);border-radius:14px;padding:16px 18px;box-shadow:0 8px 30px rgba(0,0,0,.35);display:flex;gap:16px;align-items:center;flex-wrap:wrap;font-size:.88rem}
+        .consent-bar p{margin:0;flex:1;min-width:220px;color:var(--text-dim)}
+        .consent-bar__actions{display:flex;gap:10px}
+        .consent-bar button{border:0;border-radius:999px;padding:9px 18px;cursor:pointer;font-weight:700;font-size:.85rem;font-family:inherit}
+        .consent-bar .consent-accept{background:var(--accent);color:var(--on-accent)}
+        .consent-bar .consent-decline{background:transparent;color:var(--text-dim);border:1px solid rgba(147,163,154,.4)}
+        @media (max-width:560px){.wrap{padding:0 18px}.hero img{width:96px;height:96px;border-radius:24px}.navr{gap:12px}}
+        @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+    </style>
+</head>
+<body>
+    <a class="skip" href="#main">Skip to content</a>
+    <nav class="top" aria-label="Main">
+        <div class="wrap">
+            <a class="logo" href="/">mohsin<span>.se_</span></a>
+            <div class="navr">
+                <a href="/documents.html">docs</a>
+                <a href="/tools/" aria-current="page">tools</a>
+                <a href="/">&larr; back to site</a>
+                <button class="theme-toggle" type="button" id="themeBtn" aria-label="Toggle dark / light theme">&#9680;</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <div class="wrap crumbs"><a href="/tools/">Tools</a> / <a href="/tools/appsweep/">AppSweep</a> / How to</div>
+        <header class="page">
+            <div class="wrap">
+                <h1>How to use <em>AppSweep</em></h1>
+                <p class="lead">Remove many iPhone apps at once from your Mac, in a few minutes.</p>
+            </div>
+        </header>
+        <div class="wrap">
+            <h2 style="margin-top:8px">Before you start</h2>
+            <ul class="list">
+                <li>A Mac with macOS 13 or later</li>
+                <li>A USB cable for your iPhone</li>
+                <li><a href="https://brew.sh" rel="noopener">Homebrew</a> (see below if you do not have it)</li>
+            </ul>
+            <p class="note"><strong>Read this first:</strong> removing an app deletes its data and cannot be undone. Apple's own apps cannot be removed.</p>
+
+            <h2>Step by step</h2>
+            <ol class="steps">
+                <li><div><b>Install AppSweep</b><span>Open Terminal and run:</span><pre><code>brew install mohsinsapra/tools/appsweep</code></pre><span>Homebrew also installs the helper tools libimobiledevice and ideviceinstaller for you.</span></div></li>
+                <li><div><b>Connect your iPhone</b><span>Plug it into your Mac with a USB cable. Unlock the iPhone and tap <b style="display:inline">Trust</b> when it asks.</span></div></li>
+                <li><div><b>Start AppSweep</b><span>In Terminal run:</span><pre><code>appsweep</code></pre></div></li>
+                <li><div><b>Tick the apps you want gone</b><span>AppSweep shows the apps on your iPhone. Tick each one you want to remove and check the list once more.</span></div></li>
+                <li><div><b>Press Uninstall</b><span>The ticked apps are removed from the iPhone.</span></div></li>
+            </ol>
+
+            <h2>Pick faster: categories, sizes and Keep</h2>
+            <ul class="list">
+                <li>Use the category filter and tick a whole category at once, for example all Health &amp; Fitness apps.</li>
+                <li>Sort by size, and check the "frees about X GB" figure for your selection.</li>
+                <li>Star the apps you want to keep. Starred apps are protected from select-all.</li>
+            </ul>
+
+            <h2>How to find apps you never open</h2>
+            <p class="dim">iOS does not give any tool, including AppSweep, the date an app was last used. Use the iPhone itself:</p>
+            <ol class="list">
+                <li>On the iPhone open <strong>Settings &gt; General &gt; iPhone Storage</strong>. Each app shows <strong>Last Used</strong>.</li>
+                <li>Note the names of the apps you have not opened for a long time.</li>
+                <li>In AppSweep, tick those apps.</li>
+            </ol>
+            <p class="dim">The saved-data size in AppSweep is only a hint. A small size does not mean an app is unused.</p>
+
+            <h2>If you downloaded the .zip instead</h2>
+            <p class="dim">Downloaded copies are not notarized by Apple. On first start, right-click the app and choose <strong>Open</strong>, or run:</p>
+            <pre><code>xattr -dr com.apple.quarantine /Applications/AppSweep.app</code></pre>
+            <p class="dim">Installing with Homebrew avoids this.</p>
+
+            <h2>Troubleshooting</h2>
+            <h3>My iPhone is not found</h3>
+            <ul class="list">
+                <li>Unlock the iPhone and keep the screen on.</li>
+                <li>Tap <strong>Trust</strong> on the iPhone when the prompt appears. If you tapped Don't Trust earlier, unplug and plug the cable in again to get the prompt back.</li>
+                <li>Try another cable or another USB port.</li>
+                <li>Check whether your Mac can see the iPhone. In Terminal run <code>idevice_id -l</code>. It should print your iPhone's ID. If it prints nothing, the Mac does not see the iPhone yet.</li>
+            </ul>
+            <h3>An app fails to remove</h3>
+            <ul class="list">
+                <li>A <strong>Screen Time restriction</strong> on the iPhone can block removing apps. Check the restrictions and try again.</li>
+                <li>The app may be a <strong>managed app</strong> (installed by an employer or school), which cannot be removed this way.</li>
+                <li>Apple's own apps cannot be removed.</li>
+            </ul>
+            <h3>Homebrew is not installed</h3>
+            <p class="dim">Go to <a href="https://brew.sh" rel="noopener">brew.sh</a> and copy the one-line install command into Terminal. When it finishes, run the AppSweep install command again.</p>
+
+            <h2>Uninstall AppSweep</h2>
+            <p class="dim">To remove AppSweep from your Mac:</p>
+            <pre><code>brew uninstall appsweep</code></pre>
+
+            <p style="margin-top:40px"><a class="btn" href="/tools/appsweep/">Back to AppSweep</a></p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="wrap">
+            <p><a href="/">Home</a> <a href="/tools/">Tools</a> <a href="/privacy/tools.html">Tools privacy</a> <a href="/#contact">Contact</a></p>
+            <p>&copy; <span id="year">2026</span> Muhammad Mohsin. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('themeBtn').addEventListener('click', function () {
+            var n = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+            document.documentElement.dataset.theme = n;
+            try { localStorage.setItem('theme', n); } catch (e) {}
+        });
+    </script>
+    <script src="/assets/js/consent.js" defer></script>
+</body>
+
+</html>

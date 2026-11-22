@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to find iPhone apps you never use and remove them in bulk</title>
+<meta name="description" content="Find unused iPhone apps with iPhone Storage and Offload, then remove many at once from a Mac with AppSweep. Includes honest limits.">
+<meta name="author" content="Muhammad Mohsin">
+<link rel="canonical" href="https://mohsin.se/blog/find-iphone-apps-you-never-use.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="mohsin.se">
+<meta property="og:title" content="How to find iPhone apps you never use and remove them in bulk">
+<meta property="og:description" content="Find unused iPhone apps with iPhone Storage and Offload, then remove many at once from a Mac with AppSweep. Includes honest limits.">
+<meta property="og:url" content="https://mohsin.se/blog/find-iphone-apps-you-never-use.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How to find iPhone apps you never use and remove them in bulk">
+<meta name="twitter:description" content="Find unused iPhone apps with iPhone Storage and Offload, then remove many at once from a Mac with AppSweep. Includes honest limits.">
+<script>(function(){try{document.documentElement.dataset.theme=localStorage.getItem("theme")||"dark"}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SX8ZSEPPXB"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('consent', 'default', {'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500});
+gtag('js', new Date());
+gtag('config', 'G-SX8ZSEPPXB');
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to find iPhone apps you never use and remove them in bulk", "description": "Find unused iPhone apps with iPhone Storage and Offload, then remove many at once from a Mac with AppSweep. Includes honest limits.", "author": {"@type": "Person", "name": "Muhammad Mohsin", "url": "https://mohsin.se/"}, "publisher": {"@type": "Person", "name": "Muhammad Mohsin"}, "datePublished": "2026-11-22", "dateModified": "2026-11-22", "mainEntityOfPage": "https://mohsin.se/blog/find-iphone-apps-you-never-use.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "mohsin.se", "item": "https://mohsin.se/"}, {"@type": "ListItem", "position": 2, "name": "AppSweep", "item": "https://mohsin.se/tools/appsweep/"}, {"@type": "ListItem", "position": 3, "name": "How to find iPhone apps you never use and remove them in bulk", "item": "https://mohsin.se/blog/find-iphone-apps-you-never-use.html"}]}</script>
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0d10;--bg-card:#12181e;--border:#202a32;--text:#e8f0ea;--text-dim:#93a39a;--accent:#2fe98c;--accent-soft:rgba(47,233,140,.12)}
+[data-theme="light"]{--bg:#f4f1e9;--bg-card:#faf8f2;--border:#ddd8cc;--text:#15211a;--text-dim:#5c6a60;--accent:#0c7c4a;--accent-soft:rgba(12,124,74,.1)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:"Satoshi",sans-serif;min-height:100vh;line-height:1.7;font-size:1.05rem}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+nav{padding:18px 0;border-bottom:1px solid var(--border)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font-family:"Clash Display",sans-serif;font-weight:600;font-size:1.2rem;color:var(--text);text-decoration:none}
+.logo span{color:var(--accent)}
+.navr{display:flex;gap:14px;align-items:center}
+.navr a{color:var(--text-dim);text-decoration:none;font-size:.95rem}
+.navr a:hover{color:var(--accent)}
+#theme-toggle{background:var(--bg-card);color:var(--text);border:1px solid var(--border);border-radius:999px;padding:6px 14px;cursor:pointer;font:inherit;font-size:.85rem}
+.crumbs{padding:22px 0 0;font-size:.88rem;color:var(--text-dim)}
+.crumbs a{color:var(--text-dim)}
+.crumbs a:hover{color:var(--accent)}
+header.page{padding:20px 0 8px}
+h1{font-family:"Clash Display",sans-serif;font-size:clamp(1.9rem,5vw,2.7rem);font-weight:600;line-height:1.15}
+.meta{color:var(--text-dim);font-size:.9rem;margin-top:12px}
+h2{font-family:"Clash Display",sans-serif;font-size:1.5rem;font-weight:600;margin:42px 0 10px;line-height:1.25}
+h3{font-family:"Clash Display",sans-serif;font-size:1.15rem;font-weight:600;margin:28px 0 8px}
+p,ul,ol{margin:12px 0}
+ul,ol{padding-left:1.3rem}
+li{margin:6px 0}
+a{color:var(--accent)}
+.answer{background:var(--accent-soft);border-left:3px solid var(--accent);padding:12px 16px;border-radius:0 10px 10px 0;margin:10px 0 14px}
+.note{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin:20px 0;font-size:.95rem}
+.cta{background:var(--bg-card);border:1px solid var(--accent);border-radius:16px;padding:22px 24px;margin:36px 0}
+.cta h2{margin:0 0 8px;font-size:1.25rem}
+.cta pre{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:12px 14px;overflow-x:auto;margin:12px 0;font-size:.92rem}
+.btn{display:inline-block;background:var(--accent);color:#06130c;font-weight:700;text-decoration:none;padding:11px 20px;border-radius:999px;font-size:.95rem;margin:4px 8px 4px 0}
+.btn.alt{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.tablewrap{overflow-x:auto;margin:18px 0;border:1px solid var(--border);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:.93rem}
+caption{text-align:left;padding:12px 14px;color:var(--text-dim);font-size:.88rem}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-top:1px solid var(--border)}
+thead th{background:var(--bg-card);border-top:0}
+tbody th{font-weight:700;background:var(--bg-card)}
+.related{display:grid;gap:10px;margin-top:10px}
+.related a{display:block;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;text-decoration:none;color:var(--text)}
+.related a:hover{border-color:var(--accent)}
+footer{border-top:1px solid var(--border);margin-top:56px;padding:26px 0 40px;text-align:center;color:var(--text-dim);font-size:.85rem}
+footer a{color:var(--text-dim)}
+code{background:var(--bg-card);border:1px solid var(--border);border-radius:6px;padding:1px 6px;font-size:.9em}
+.consent-bar{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:560px;margin:0 auto;background:var(--bg-card);color:var(--text);border:1px solid rgba(147,163,154,.3);border-radius:14px;padding:16px 18px;box-shadow:0 8px 30px rgba(0,0,0,.35);display:flex;gap:16px;align-items:center;flex-wrap:wrap;font-size:.88rem}
+.consent-bar p{margin:0;flex:1;min-width:220px;color:var(--text-dim)}
+.consent-bar__actions{display:flex;gap:10px}
+.consent-bar button{border:0;border-radius:999px;padding:9px 18px;cursor:pointer;font-weight:700;font-size:.85rem;font-family:inherit}
+.consent-bar .consent-accept{background:var(--accent);color:#06130c}
+.consent-bar .consent-decline{background:transparent;color:var(--text-dim);border:1px solid rgba(147,163,154,.4)}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<a class="logo" href="/">mohsin<span>.se_</span></a>
+<div class="navr"><a href="/tools/appsweep/">AppSweep</a><button id="theme-toggle" type="button" aria-label="Switch between dark and light theme">Theme</button></div>
+</div></nav>
+<main class="wrap">
+<p class="crumbs"><a href="/">mohsin.se</a> &rsaquo; <a href="/tools/appsweep/">AppSweep</a> &rsaquo; Guide</p>
+<header class="page">
+<h1>How to find iPhone apps you never use and remove them in bulk</h1>
+<p class="meta">By Muhammad Mohsin, maker of AppSweep. Published 22 November 2026.</p>
+</header>
+<article>
+
+<p>Most people do not know which apps they still use. The phone is full, you want space, and you do not want to delete the wrong thing. Here is a calm way to decide, using what the iPhone shows you and then clearing the pile in one go from a Mac.</p>
+
+<h2>Step 1: look at iPhone Storage on the phone</h2>
+<p class="answer">Open Settings &gt; General &gt; iPhone Storage. It lists your apps with the space each one uses and, for most apps, when you last used it.</p>
+<p>What you see depends on your iOS version, so do not worry if your screen differs slightly. Apple describes this screen in <a href="https://support.apple.com/108429" rel="noopener">How to check the storage on your iPhone and iPad</a>. Write down, or screenshot, the apps that are large or that you have not touched for a long time. Those are your candidates.</p>
+<p>Be careful with one thing: size alone is not a reason to delete. A banking app can be small and essential, and a game can be huge and dead to you.</p>
+
+<h2>Step 2: try Offload Unused Apps first</h2>
+<p class="answer">Offloading frees the storage used by the app but keeps its documents and data (Apple).</p>
+<p>That makes it the low-risk option. Apple shows an Offload Unused Apps recommendation in iPhone Storage. If you might want an app back with your progress, offload it instead of deleting it. The app icon stays and you can download it again when needed. Offloaded apps still count as installed, so they are not what a bulk uninstall is for.</p>
+
+<h2>Step 3: remove the rest in bulk with AppSweep</h2>
+<p>For apps you are sure about, deleting one at a time is slow. On the phone, deleting is done one app at a time (in Apple's guide for removing apps there is no multi-select step, checked in Apple's iOS 18 guide). A desktop tool fixes that. This is the AppSweep workflow:</p>
+<ol>
+<li><strong>Install it</strong> on your Mac with <code>brew install mohsinsapra/tools/appsweep</code>.</li>
+<li><strong>Connect the iPhone</strong> by USB, unlock it and tap Trust when asked.</li>
+<li><strong>Read the names.</strong> AppSweep lists the apps by name, so you can match them against the candidates you wrote down in Step 1.</li>
+<li><strong>Filter by App Store category.</strong> Looking at all Games, or all Photo and Video apps, at once makes decisions faster.</li>
+<li><strong>Sort by size</strong> to see what frees the most space.</li>
+<li><strong>Treat the saved-data size as a hint only.</strong> It is a rough signal that you have put something into the app. It is not proof the data is important or unimportant.</li>
+<li><strong>Star the apps to keep.</strong> The Keep star protects important apps, such as banking, authenticators and anything with data you cannot recreate.</li>
+<li><strong>Select the rest and uninstall</strong> them together.</li>
+</ol>
+<p>The full walk-through with screenshots is in the <a href="/tools/appsweep/how-to.html">AppSweep how-to</a>.</p>
+
+<h2>Honest limits</h2>
+<ul>
+<li><strong>No tool outside the phone can read last-used dates.</strong> That information is shown by iPhone Storage on the phone, so do Step 1 on the phone before you sit down at the Mac. AppSweep cannot tell you which apps you ignore.</li>
+<li><strong>Deleting can remove data.</strong> Deleting an app on iPhone can also remove its related data (Apple), so back up what you need first. AppSweep removes apps through the same iOS installation service.</li>
+<li><strong>Restrictions still apply.</strong> If Screen Time or a management profile blocks deleting apps, a desktop tool is unlikely to get around it.</li>
+<li><strong>You need the phone nearby.</strong> It must be connected, unlocked and trusted.</li>
+<li><strong>Redownloading is possible.</strong> If you remove something by mistake, apps still in the App Store can be downloaded again, as Apple's guide confirms.</li>
+</ul>
+
+<h2>A simple rule for what to remove</h2>
+<p>Remove an app if you cannot remember opening it this year, it is a game you finished, it is a single-use app for a trip or event, or it duplicates another app you prefer. Keep anything tied to money, identity or two-factor sign-in. When in doubt, offload instead of deleting, or give the app a Keep star and decide next month.</p>
+
+<h2>A worked example</h2>
+<p>Say your phone has 140 apps and 20 GB used by apps. Spend five minutes in iPhone Storage and note ten apps you have not opened in a long time. On the Mac, connect the phone, filter to Games and star the two you still play. Sort by size and select the rest. Then filter to Travel, Shopping and Utilities, star anything you really use, and select what is left. You end with one confirmation instead of dozens, and the Keep stars mean your banking and authenticator apps never appear in the selection by accident.</p>
+<p>The same flow works for a second-hand phone you are handing over, a work phone you are returning, or a family phone that has built up years of trial apps.</p>
+
+<h2>Before you press uninstall</h2>
+<ul>
+<li>Make a backup, either on your Mac or in iCloud, so you can recover data if you delete the wrong app.</li>
+<li>Check that you know the sign-in details for any app you may want to reinstall later.</li>
+<li>Look at the selection one more time. The count of selected apps should match what you expect.</li>
+<li>Keep the phone connected and unlocked until the process finishes.</li>
+</ul>
+<h2>Other desktop tools</h2>
+<p>AppSweep is not the only way. iMazing and 3uTools can also select several apps and uninstall them, and both do much more than app removal. I compare them honestly in <a href="/blog/appsweep-vs-imazing-vs-apple-configurator.html">AppSweep vs iMazing vs 3uTools vs Apple Configurator</a>. For the basics of deleting, including Delete versus Offload and what to do if an app will not delete, see <a href="/blog/delete-multiple-apps-iphone-at-once.html">How to delete multiple apps on iPhone at once</a>.</p>
+
+<aside class="cta" aria-label="Get AppSweep">
+<h2>Try AppSweep, free for Mac</h2>
+<p>Remove many iPhone apps at once from your Mac over USB. Install it with Homebrew:</p>
+<pre><code>brew install mohsinsapra/tools/appsweep</code></pre>
+<a class="btn" href="/tools/appsweep/">AppSweep product page</a><a class="btn alt" href="/tools/appsweep/how-to.html">How to use it</a>
+</aside>
+<section aria-labelledby="more"><h2 id="more">Related guides</h2><div class="related"><a href="/blog/delete-multiple-apps-iphone-at-once.html">How to delete multiple apps on iPhone at once</a><a href="/blog/appsweep-vs-imazing-vs-apple-configurator.html">AppSweep vs iMazing vs 3uTools vs Apple Configurator</a></div></section>
+</article>
+</main>
+<footer><div class="wrap"><p>&copy; <span id="year">2026</span> Muhammad Mohsin. <a href="/">mohsin.se</a> &middot; <a href="/privacy/tools.html">Privacy</a></p></div></footer>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+document.getElementById('theme-toggle').addEventListener('click',function(){var d=document.documentElement,n=d.dataset.theme==='dark'?'light':'dark';d.dataset.theme=n;try{localStorage.setItem('theme',n)}catch(e){}});
+</script>
+<script src="/assets/js/consent.js" defer></script>
+</body>
+</html>
